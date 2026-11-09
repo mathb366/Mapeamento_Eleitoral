@@ -1,0 +1,2222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_618068e31a54a451db23e7545e0c50a4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 50px; left: 50px; width: 250px; height: 80px; 
+            background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+            padding: 10px; border-radius: 5px;">
+    <b>Zonas de Dominância (2º Turno)</b><br>
+    <i style="background:#cb181d; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> LUIZ INÁCIO LULA DA SILVA (PT)<br>
+    <i style="background:#4292c6; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> FLAVIO NANTES BOLSONARO<br>
+    <small><i>(Quanto mais escuro, maior a % de votos)</i></small>
+</div>
+    
+            <div class="folium-map" id="map_618068e31a54a451db23e7545e0c50a4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_618068e31a54a451db23e7545e0c50a4 = L.map(
+                "map_618068e31a54a451db23e7545e0c50a4",
+                {
+                    center: [-20.5208, -43.6919],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cd59a18b50c03940b448ba33d3606650 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cd59a18b50c03940b448ba33d3606650.addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            var circle_marker_122db651153289174598b2493c724c08 = L.circleMarker(
+                [-20.500775302721614, -43.69610671100061],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_122db651153289174598b2493c724c08.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 21<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 28.15%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 71.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_117b545d1a8163338bb87d6d12d0f544 = L.circleMarker(
+                [-20.50858760449476, -43.687100913128255],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_117b545d1a8163338bb87d6d12d0f544.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 22<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.51%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d88c7e2a275743b45bd3d0f15658b54 = L.circleMarker(
+                [-20.514099334056443, -43.68261766257781],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8d88c7e2a275743b45bd3d0f15658b54.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 23<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 31.09%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 68.91%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ff9d7c66fcca8a859a9b318f8af0d85 = L.circleMarker(
+                [-20.491566016182112, -43.69400070858518],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_3ff9d7c66fcca8a859a9b318f8af0d85.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 24<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.51%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32b8dac7b97b120c1889666aa861d3eb = L.circleMarker(
+                [-20.51156142093736, -43.69537041204171],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_32b8dac7b97b120c1889666aa861d3eb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 25<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.53%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b803b9beb4e05c6d1b225d7dea9a13c = L.circleMarker(
+                [-20.55033061357087, -43.709077915940654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_9b803b9beb4e05c6d1b225d7dea9a13c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 26<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 30.8%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 69.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea7d57f9d168609ccc4f14131baf09a9 = L.circleMarker(
+                [-20.501773751893072, -43.69350882884544],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_ea7d57f9d168609ccc4f14131baf09a9.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 27<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 24.16%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 75.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e574babb5c4099b8030e79fbc447e24 = L.circleMarker(
+                [-20.532837274868, -43.6678291504503],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_3e574babb5c4099b8030e79fbc447e24.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 28<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.57%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_357c4a29058c430ad4825da48e09bc1c = L.circleMarker(
+                [-20.510996677102035, -43.67413851439239],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_357c4a29058c430ad4825da48e09bc1c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 29<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 32.95%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 67.05%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8860d8d3c79636e4f003dc8522f4d00 = L.circleMarker(
+                [-20.494464199764376, -43.71171851622811],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_a8860d8d3c79636e4f003dc8522f4d00.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 31<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.55%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_92f6ea059b55414b4699111feed1480c = L.circleMarker(
+                [-20.542742533136398, -43.71681226779649],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_92f6ea059b55414b4699111feed1480c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 33<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 24.16%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 75.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6220d329e1c8b90612a2cd4392d5ea69 = L.circleMarker(
+                [-20.543874279774855, -43.69097287940508],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_6220d329e1c8b90612a2cd4392d5ea69.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 41<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.7%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.3%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e37501d3856dcbda16886bfe410077f = L.circleMarker(
+                [-20.544377841337436, -43.68392354865405],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_7e37501d3856dcbda16886bfe410077f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 61<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 38.38%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 61.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7251d754068431881a0bb9f920b579fa = L.circleMarker(
+                [-20.51760658154691, -43.70178870467541],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_7251d754068431881a0bb9f920b579fa.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 69<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 29.82%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 70.18%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23178aa68e7ac7033693476062774edb = L.circleMarker(
+                [-20.534459107261114, -43.672794592127794],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_23178aa68e7ac7033693476062774edb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 47<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.97%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_854612b1099c56b5b96364cf5bbb2fd1 = L.circleMarker(
+                [-20.514510210378187, -43.67683171174755],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_854612b1099c56b5b96364cf5bbb2fd1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 48<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 24.21%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 75.79%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e98e0d5a9c6e9d5cb6352c72522a6636 = L.circleMarker(
+                [-20.507743268771673, -43.68153225976657],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_e98e0d5a9c6e9d5cb6352c72522a6636.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 50<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.35%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf624a8864df4a8fc4dc4f2f556ab853 = L.circleMarker(
+                [-20.538584161260353, -43.70842156004016],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_bf624a8864df4a8fc4dc4f2f556ab853.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 51<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.97%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_437946a73435951554ba6a450c1deb10 = L.circleMarker(
+                [-20.512745722466896, -43.709952204036405],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_437946a73435951554ba6a450c1deb10.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 52<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.71%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.29%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8694a427a55616ba8db7e67f14e870fd = L.circleMarker(
+                [-20.534960965902176, -43.720434476736386],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8694a427a55616ba8db7e67f14e870fd.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 56<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 25.68%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 74.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa45ba49309dafbf1f9cab59db515e59 = L.circleMarker(
+                [-20.52148808887104, -43.7072094473553],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_aa45ba49309dafbf1f9cab59db515e59.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 57<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 28.78%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 71.22%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5e230e864459a603d440c699fa59c42 = L.circleMarker(
+                [-20.49647981053524, -43.69339181934687],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f5e230e864459a603d440c699fa59c42.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 58<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 25.78%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 74.22%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa5dc3b55b62fe502a06ebfba50db00a = L.circleMarker(
+                [-20.50003377720231, -43.67091573832251],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_fa5dc3b55b62fe502a06ebfba50db00a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 59<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 22.38%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 77.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_995af1d5b5f17109fd7702e6b4a8323d = L.circleMarker(
+                [-20.545262091937236, -43.717530306248925],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_995af1d5b5f17109fd7702e6b4a8323d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 60<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 21.36%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 78.64%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7cc9c070389c94fd1db7436c9d64b9ab = L.circleMarker(
+                [-20.525385453646177, -43.69703353934013],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_7cc9c070389c94fd1db7436c9d64b9ab.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 61<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.08%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e745df33066cc8260a9711bb041a46b2 = L.circleMarker(
+                [-20.534199186561665, -43.68411407715573],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_e745df33066cc8260a9711bb041a46b2.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 65<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 21.99%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 78.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09ee6063161eebdadc8596aa14f5aa7c = L.circleMarker(
+                [-20.550587258654733, -43.71023388579562],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_09ee6063161eebdadc8596aa14f5aa7c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 66<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 25.57%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 74.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06e2105a0b7fb1246f293a89e812eb21 = L.circleMarker(
+                [-20.504532846618822, -43.680118744970564],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_06e2105a0b7fb1246f293a89e812eb21.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 67<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 22.37%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 77.63%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_caa63aa8500c4110ad326f3dcfd5457d = L.circleMarker(
+                [-20.512573197361917, -43.69223736985937],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_caa63aa8500c4110ad326f3dcfd5457d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 68<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.27%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.73%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b68c05c5c5656d7d69fe40546a42774f = L.circleMarker(
+                [-20.53508268425394, -43.70726093362529],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_b68c05c5c5656d7d69fe40546a42774f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 69<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 21.57%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 78.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc7ec48b962dc52d4673ca224cb1430e = L.circleMarker(
+                [-20.506326145499127, -43.68253651933329],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_dc7ec48b962dc52d4673ca224cb1430e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 70<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 25.16%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 74.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4654e4e4776eda9f4ae722e46c9ab0c4 = L.circleMarker(
+                [-20.517699174732417, -43.721567310911716],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_4654e4e4776eda9f4ae722e46c9ab0c4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 71<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 19.73%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 80.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d36f6f21093e04a307373b02f8dad222 = L.circleMarker(
+                [-20.52513878486116, -43.676842131402886],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d36f6f21093e04a307373b02f8dad222.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 72<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 22.3%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 77.7%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e88c8c77d1d1ace39ce1b606196de3e5 = L.circleMarker(
+                [-20.5502198180235, -43.67569722868556],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_e88c8c77d1d1ace39ce1b606196de3e5.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 79<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.24%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f745afae1b2b17380b71d86a0372e4a = L.circleMarker(
+                [-20.546285368395576, -43.71550476220619],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_5f745afae1b2b17380b71d86a0372e4a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 80<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.02%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.98%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33c978089d28eac349772ddc47dde755 = L.circleMarker(
+                [-20.49781361640199, -43.69639122836343],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_33c978089d28eac349772ddc47dde755.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 81<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 23.29%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 76.71%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a53004c1477a2998727f9696b92b989 = L.circleMarker(
+                [-20.49656428570641, -43.711346799097605],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_0a53004c1477a2998727f9696b92b989.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 94<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 20.92%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 79.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbc6b235bb6379caaf2a191c86c4e3ed = L.circleMarker(
+                [-20.51806458264767, -43.664422037463225],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_dbc6b235bb6379caaf2a191c86c4e3ed.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 95<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 18.31%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 81.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df8dc277fa16e3cdbcb59652e6f853d8 = L.circleMarker(
+                [-20.50072429880684, -43.69082253497337],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_df8dc277fa16e3cdbcb59652e6f853d8.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 96<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 20.58%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 79.42%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bf87fb1167f5701a5a7dcd455592ddc = L.circleMarker(
+                [-20.515849426010615, -43.71888689689156],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_4bf87fb1167f5701a5a7dcd455592ddc.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 105<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 19.18%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 80.82%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c0f8b2bf192058402adb0fe81ab7091 = L.circleMarker(
+                [-20.541914372865953, -43.7069481032204],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_3c0f8b2bf192058402adb0fe81ab7091.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 108<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.17%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_87e59d38bdb8845431e24130dbf8974f = L.circleMarker(
+                [-20.543153268843074, -43.670999819158894],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_87e59d38bdb8845431e24130dbf8974f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.92%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a11a626f93332686dad30c75039a225e = L.circleMarker(
+                [-20.532304499004194, -43.694512290471785],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_a11a626f93332686dad30c75039a225e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.88%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.12%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95dfe0340f6a107fd1cb79fc26bebbd9 = L.circleMarker(
+                [-20.496861110675447, -43.673815003896664],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_95dfe0340f6a107fd1cb79fc26bebbd9.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.4%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.6%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2c359979bb0a0a42421e02140d4ab6c = L.circleMarker(
+                [-20.50303266170672, -43.681845336044816],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_e2c359979bb0a0a42421e02140d4ab6c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.34%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f881c622b85f4654423bcc98005334b4 = L.circleMarker(
+                [-20.499157845079946, -43.66262645281601],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f881c622b85f4654423bcc98005334b4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.0%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d17e37e414ab684fdff713dc1f5bb65 = L.circleMarker(
+                [-20.496864521808412, -43.68617286089183],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_6d17e37e414ab684fdff713dc1f5bb65.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 62.8%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 37.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d04e0ecaa644e3cd9e5a56b7923cebef = L.circleMarker(
+                [-20.538195407699614, -43.66489762349341],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d04e0ecaa644e3cd9e5a56b7923cebef.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 58.14%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 41.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33976e61cdb03bf75e78406e1d80c200 = L.circleMarker(
+                [-20.535828215646625, -43.66841444445137],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_33976e61cdb03bf75e78406e1d80c200.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 63.95%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 36.05%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9d502f4618db8905cb2bdcc1081e98d = L.circleMarker(
+                [-20.544632382699692, -43.68514086063429],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_c9d502f4618db8905cb2bdcc1081e98d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 55.89%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 44.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_870c85acc7aeaaaf1f56a90d6434f0f4 = L.circleMarker(
+                [-20.503993025487716, -43.67874356232344],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_870c85acc7aeaaaf1f56a90d6434f0f4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 54.32%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 45.68%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aee247a70a013daec0458bb6f34ff571 = L.circleMarker(
+                [-20.49775191791294, -43.69161331011053],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_aee247a70a013daec0458bb6f34ff571.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 49.15%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8263ff7d880cd2e7aa4b4d5e79810667 = L.circleMarker(
+                [-20.526417356610075, -43.67206584981671],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8263ff7d880cd2e7aa4b4d5e79810667.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.17%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_29753d5c2a0daf71591c86eccb15158c = L.circleMarker(
+                [-20.513560309390957, -43.68902768296335],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_29753d5c2a0daf71591c86eccb15158c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.55%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02ca8027f6e0140fa49cf2123d52ecee = L.circleMarker(
+                [-20.54152679970007, -43.668067513806],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_02ca8027f6e0140fa49cf2123d52ecee.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 45.9%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 54.1%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_579a67a8832456266a8c8a76c6d3fa4d = L.circleMarker(
+                [-20.49500713905838, -43.67728067347042],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_579a67a8832456266a8c8a76c6d3fa4d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 49.82%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.18%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17de565fbc58a07b4c5431512f8884de = L.circleMarker(
+                [-20.498923658226804, -43.69341953379061],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_17de565fbc58a07b4c5431512f8884de.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.19%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_924acd98ee263bd94c3fa1791c129554 = L.circleMarker(
+                [-20.492227638024143, -43.706348507092095],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_924acd98ee263bd94c3fa1791c129554.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.0%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_874e5718396ee545ca873799372960e8 = L.circleMarker(
+                [-20.50215369680358, -43.707065615749414],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_874e5718396ee545ca873799372960e8.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.0%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2455048000d207cae0292cc13ac27c3f = L.circleMarker(
+                [-20.4979150277202, -43.683640313793425],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_2455048000d207cae0292cc13ac27c3f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.75%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.25%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9e6bb2820bc7f05fd348a0f4bedcf77 = L.circleMarker(
+                [-20.54931281828611, -43.675951178942164],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d9e6bb2820bc7f05fd348a0f4bedcf77.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 60.83%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 39.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7079c43578fe368aee656d67dc33c40 = L.circleMarker(
+                [-20.506606131694696, -43.69062201123032],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d7079c43578fe368aee656d67dc33c40.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.58%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.42%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34f42f8f8d8c84184615d7dd28e3ef98 = L.circleMarker(
+                [-20.530868871923214, -43.68429509378109],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_34f42f8f8d8c84184615d7dd28e3ef98.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 58.99%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 41.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f51619d4dcc0c47028a726995f7bb67e = L.circleMarker(
+                [-20.4949510468371, -43.70542415318494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f51619d4dcc0c47028a726995f7bb67e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 57.53%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 42.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_726a6bf3119f397c3f9e814e903dc372 = L.circleMarker(
+                [-20.502665891663774, -43.717250998768115],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_726a6bf3119f397c3f9e814e903dc372.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.6%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.4%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fa7dbd59fefbef070687f1b067fbfa9 = L.circleMarker(
+                [-20.498956158297485, -43.704756310948206],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8fa7dbd59fefbef070687f1b067fbfa9.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.46%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_906896f982c49ca09ed76ff802f78625 = L.circleMarker(
+                [-20.502155041005537, -43.705597093575065],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_906896f982c49ca09ed76ff802f78625.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.56%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_94549c86ef693f2f8633df3427baac25 = L.circleMarker(
+                [-20.534791657424332, -43.70271742589487],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_94549c86ef693f2f8633df3427baac25.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 44.66%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 55.34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de1da26eb0caf56e87be3b85f01be0b8 = L.circleMarker(
+                [-20.50355752945187, -43.68949086664889],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_de1da26eb0caf56e87be3b85f01be0b8.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.16%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d2fa5613ac0ca6d5f3b47c57dc9d5a7 = L.circleMarker(
+                [-20.544314262415824, -43.713597556309026],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_3d2fa5613ac0ca6d5f3b47c57dc9d5a7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.58%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.42%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_102f537cc49867bfe85066f7e690a163 = L.circleMarker(
+                [-20.498469993025637, -43.708024311216306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_102f537cc49867bfe85066f7e690a163.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.69%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.31%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76b25626e8460b867902318de9a26920 = L.circleMarker(
+                [-20.499284404919734, -43.680263011262056],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_76b25626e8460b867902318de9a26920.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.86%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.14%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99a91b471a89461fd4156cedb4e40084 = L.circleMarker(
+                [-20.537453976947262, -43.679514851498325],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_99a91b471a89461fd4156cedb4e40084.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 42.57%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 57.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66f3ed8a6749354cc740740269455711 = L.circleMarker(
+                [-20.501804803664186, -43.71804626895717],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_66f3ed8a6749354cc740740269455711.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 44.9%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 55.1%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c4e2102df4b5a77b3e8e2da16050146 = L.circleMarker(
+                [-20.523181805919265, -43.69744403782],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8c4e2102df4b5a77b3e8e2da16050146.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.47%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_743e243de3ef32997279f384e5e92b5d = L.circleMarker(
+                [-20.532488547959684, -43.68934333156976],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_743e243de3ef32997279f384e5e92b5d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 56.96%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 43.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0932e31746db6032720215a221a9bdeb = L.circleMarker(
+                [-20.50307927005083, -43.69695354595381],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_0932e31746db6032720215a221a9bdeb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.67%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.33%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d12213fbeacf5c197cc29b7b896623b1 = L.circleMarker(
+                [-20.537144270755537, -43.70948993662913],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d12213fbeacf5c197cc29b7b896623b1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 49.78%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.22%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7faf2b01d1a3ef1138bc5f586198cb13 = L.circleMarker(
+                [-20.549380133917914, -43.696691388933594],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_7faf2b01d1a3ef1138bc5f586198cb13.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.28%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.72%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_540e3cfc934b7e2d31d7d9a36dcafc51 = L.circleMarker(
+                [-20.53921221270034, -43.66760969129959],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_540e3cfc934b7e2d31d7d9a36dcafc51.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.81%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42c71f00ffbbc66f6a549ccf05d21f78 = L.circleMarker(
+                [-20.53110428292814, -43.686855235147746],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_42c71f00ffbbc66f6a549ccf05d21f78.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.0%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a63e04534f7677a7f80772dd1e46e9a0 = L.circleMarker(
+                [-20.498938823478184, -43.68016862081012],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_a63e04534f7677a7f80772dd1e46e9a0.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.86%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.14%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c648c80278d922e571a34bcabaa34597 = L.circleMarker(
+                [-20.4927866537571, -43.67049607806176],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_c648c80278d922e571a34bcabaa34597.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.54%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.46%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1555c1bf237f36596d447c1f7d3885ae = L.circleMarker(
+                [-20.53405250043669, -43.675964325432915],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_1555c1bf237f36596d447c1f7d3885ae.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.26%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.74%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0e44c4ba8007c679d564851899045a1 = L.circleMarker(
+                [-20.512311095683543, -43.699077138264336],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_c0e44c4ba8007c679d564851899045a1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.9%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.1%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb90c2b31896073aed1806c296d94329 = L.circleMarker(
+                [-20.5268192969384, -43.721546234984956],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_fb90c2b31896073aed1806c296d94329.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 49.48%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4c1d505c709d9cc8131358e69c8a698 = L.circleMarker(
+                [-20.491931018768106, -43.700794471839686],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d4c1d505c709d9cc8131358e69c8a698.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.5%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.5%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71c022eb38aaa122e25028d3b3508f8c = L.circleMarker(
+                [-20.51862705605128, -43.67669149249643],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_71c022eb38aaa122e25028d3b3508f8c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 45.96%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 54.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7458032cacb901bb7de8e426c42567dc = L.circleMarker(
+                [-20.49444577158052, -43.67069312296585],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_7458032cacb901bb7de8e426c42567dc.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.59%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_50561b0f0486a81958630a418cf014bd = L.circleMarker(
+                [-20.543879494888916, -43.66469417969179],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_50561b0f0486a81958630a418cf014bd.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.97%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ab0156b84021ac4b7bfe2e82b7e0aa8 = L.circleMarker(
+                [-20.492575963338666, -43.69675872304221],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_3ab0156b84021ac4b7bfe2e82b7e0aa8.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 44.34%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 55.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30b617333ff12d4c6955387ee1549a59 = L.circleMarker(
+                [-20.540085931029655, -43.67704905986131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_30b617333ff12d4c6955387ee1549a59.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.44%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1de2b4fb31c90180fb2c0a12b2d53eeb = L.circleMarker(
+                [-20.493047941054307, -43.68913206141597],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_1de2b4fb31c90180fb2c0a12b2d53eeb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.24%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37374536b047e118855c69d00dd283b7 = L.circleMarker(
+                [-20.534872018248624, -43.68570484466352],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_37374536b047e118855c69d00dd283b7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 45.76%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 54.24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afffec5a171bc3b066b997235af120f4 = L.circleMarker(
+                [-20.544295847167117, -43.70866767834057],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_afffec5a171bc3b066b997235af120f4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 36.06%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 63.94%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_026748aa63187fda766bee3f4d2abf46 = L.circleMarker(
+                [-20.524726174486123, -43.70873470192271],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_026748aa63187fda766bee3f4d2abf46.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 42.94%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 57.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fcf99eccb52da1f43363065976c60bda = L.circleMarker(
+                [-20.50708729636084, -43.6957498414372],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_fcf99eccb52da1f43363065976c60bda.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.73%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8dc30d2610ef10045f1f0c240dff8633 = L.circleMarker(
+                [-20.531979361148302, -43.720158510803195],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8dc30d2610ef10045f1f0c240dff8633.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.56%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_066af358dfc168e708f4dc94ccecf15a = L.circleMarker(
+                [-20.51442746880163, -43.701732227378095],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_066af358dfc168e708f4dc94ccecf15a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.75%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.25%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c53c667328399e64a967e314be80192 = L.circleMarker(
+                [-20.520114616419832, -43.681151486898294],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_8c53c667328399e64a967e314be80192.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 33.49%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 66.51%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3f1804de49aa8ed0fd3d7eb0f7a2656 = L.circleMarker(
+                [-20.527688273999317, -43.697640999851735],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_d3f1804de49aa8ed0fd3d7eb0f7a2656.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 27.52%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 72.48%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69f445f50cdd5e1476bdd9283471c9c2 = L.circleMarker(
+                [-20.516204717390206, -43.711997316127785],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_69f445f50cdd5e1476bdd9283471c9c2.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 26.74%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 73.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc901114cfc9a6433eaa96956aaf8f8f = L.circleMarker(
+                [-20.535516649631685, -43.69385659104606],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_bc901114cfc9a6433eaa96956aaf8f8f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 54.3%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 45.7%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ab98f0b5e9fd4efdbd4abdd5ea66eae = L.circleMarker(
+                [-20.50827288296995, -43.714242332163124],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_1ab98f0b5e9fd4efdbd4abdd5ea66eae.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 49.6%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.4%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_162c25cd25c4f9d39f3a800ae1c6dd66 = L.circleMarker(
+                [-20.550698523306885, -43.68456458234155],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_162c25cd25c4f9d39f3a800ae1c6dd66.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.87%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.13%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2aa6f99f2c86362401af417f977ce36 = L.circleMarker(
+                [-20.495265490070057, -43.72028201288569],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_e2aa6f99f2c86362401af417f977ce36.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.96%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_923c6b9df52e59296730471bf7bcb9a0 = L.circleMarker(
+                [-20.518492880174435, -43.69825878461961],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_923c6b9df52e59296730471bf7bcb9a0.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.97%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 49.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_774161c4bd645bd27dfa5b1b19cd7f72 = L.circleMarker(
+                [-20.50763420005131, -43.68803648101851],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_774161c4bd645bd27dfa5b1b19cd7f72.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 44.28%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 55.72%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17dace51e2321499994c35b97c9d81da = L.circleMarker(
+                [-20.506282995329634, -43.720273877219576],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_17dace51e2321499994c35b97c9d81da.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 52.38%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 47.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1205207d7042f6db787becb14036e2fa = L.circleMarker(
+                [-20.510562289734022, -43.68333502111944],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_1205207d7042f6db787becb14036e2fa.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.81%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc2af05b1f7dfefcdb412caeb6ee1928 = L.circleMarker(
+                [-20.528946711693127, -43.713758030766165],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_fc2af05b1f7dfefcdb412caeb6ee1928.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.9%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.1%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95d4df764ecb613921eda4da42e36697 = L.circleMarker(
+                [-20.546601571332424, -43.6941980933569],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_95d4df764ecb613921eda4da42e36697.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 53.26%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 46.74%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cb9532dd3e9b63554f08d5dcaf6dfba = L.circleMarker(
+                [-20.510945738905324, -43.71888292199068],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_5cb9532dd3e9b63554f08d5dcaf6dfba.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 45.97%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 54.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bfbbe4fb4402d8b3d8a49f5167c9e9a6 = L.circleMarker(
+                [-20.530987997837446, -43.69915376814871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_bfbbe4fb4402d8b3d8a49f5167c9e9a6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.39%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_508fc7b2364110c8341c7c238885dea7 = L.circleMarker(
+                [-20.5319650612965, -43.70920038294731],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_508fc7b2364110c8341c7c238885dea7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 44.37%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 55.63%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_891152ac75163ca0557be047a0f02844 = L.circleMarker(
+                [-20.49991908322962, -43.70228925170712],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_891152ac75163ca0557be047a0f02844.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.99%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b7c8b755e39ec763b0a02b2b68020e6 = L.circleMarker(
+                [-20.507614744219165, -43.676226217526356],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_0b7c8b755e39ec763b0a02b2b68020e6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.93%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6a49ba0d2051fd82ef42f7bfe6ca1bd = L.circleMarker(
+                [-20.532780663907324, -43.699152427066146],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f6a49ba0d2051fd82ef42f7bfe6ca1bd.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 42.33%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 57.67%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_971c64484e381b0b182a67e9d0461dbc = L.circleMarker(
+                [-20.532242920267482, -43.67677941058671],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_971c64484e381b0b182a67e9d0461dbc.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.49%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.51%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5385a88e304a08cec7c07d08a958743 = L.circleMarker(
+                [-20.526296425482847, -43.671984542890684],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_a5385a88e304a08cec7c07d08a958743.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 43.38%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 56.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ff9e1d66485301335731a1d116a857c = L.circleMarker(
+                [-20.52665597677654, -43.70676370809306],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_2ff9e1d66485301335731a1d116a857c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 40.35%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 59.65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0df5fbb779d70323d1981379817cb177 = L.circleMarker(
+                [-20.533060687848444, -43.7169856260343],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_0df5fbb779d70323d1981379817cb177.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 39.64%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 60.36%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7f1e41977b6d27aff1404bf2f106467 = L.circleMarker(
+                [-20.54316273205645, -43.720737002777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_c7f1e41977b6d27aff1404bf2f106467.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 37.07%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 62.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6b5870f1b0b413c4c189c557132990b = L.circleMarker(
+                [-20.525573219973626, -43.68953485712464],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f6b5870f1b0b413c4c189c557132990b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 36.36%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 63.64%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a26c2d94a1f46ba1460d33027798c6b = L.circleMarker(
+                [-20.49437817975619, -43.661905530289445],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_0a26c2d94a1f46ba1460d33027798c6b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 48.11%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 51.89%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e2c81c6a024c14379da5e0e615fe947 = L.circleMarker(
+                [-20.51016092328364, -43.700902379376785],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_5e2c81c6a024c14379da5e0e615fe947.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.85%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.15%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_197e769db3256cd4af0db276525769ac = L.circleMarker(
+                [-20.496631667256047, -43.682891354405],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_197e769db3256cd4af0db276525769ac.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 51.08%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 48.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b2307264a6f4615656baf39dae0b3be = L.circleMarker(
+                [-20.513869105042918, -43.67502601702334],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_2b2307264a6f4615656baf39dae0b3be.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 50.0%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 50.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f272ceb0276b816ebbc207a7c9855e23 = L.circleMarker(
+                [-20.53274300752607, -43.682794720685365],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_f272ceb0276b816ebbc207a7c9855e23.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 46.65%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 53.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23abec89f46fc6bc71c15e0884789fa3 = L.circleMarker(
+                [-20.517923767211858, -43.676646007756425],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_23abec89f46fc6bc71c15e0884789fa3.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% FLAVIO NANTES BOLSONARO:</b> 59.62%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 40.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd97e7fdd69cfd3dd3119e672070c849 = L.circleMarker(
+                [-20.550775643618163, -43.66492329603704],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_cd97e7fdd69cfd3dd3119e672070c849.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 47.98%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 52.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5133187257e62d19f33b4e1005842837 = L.circleMarker(
+                [-20.533585176987867, -43.70993835905824],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_618068e31a54a451db23e7545e0c50a4);
+        
+    
+            circle_marker_5133187257e62d19f33b4e1005842837.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% FLAVIO NANTES BOLSONARO:</b> 39.62%<br><b>% LUIZ INÁCIO LULA DA SILVA:</b> 60.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

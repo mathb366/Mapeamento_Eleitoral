@@ -1,0 +1,2225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ce283ab5757e82a957a80c9346af255d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; width: 150px; height: 120px; 
+                background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+                padding: 10px; border-radius: 5px;">
+        <b>Legenda (% Votos)</b><br>
+        <i style="background:#67000d; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> > 70%<br>
+        <i style="background:#a50f15; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 60% - 70%<br>
+        <i style="background:#cb181d; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 50% - 60%<br>
+        <i style="background:#ef3b2c; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 40% - 50%<br>
+        <i style="background:#fcae91; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> < 40%<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_ce283ab5757e82a957a80c9346af255d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ce283ab5757e82a957a80c9346af255d = L.map(
+                "map_ce283ab5757e82a957a80c9346af255d",
+                {
+                    center: [-20.5208, -43.6919],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d54e1e5cc8c2201e625305e4b2e39d38 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d54e1e5cc8c2201e625305e4b2e39d38.addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            var circle_marker_f62ce8149cd263d7196dc3688cf2979c = L.circleMarker(
+                [-20.51243439209253, -43.66921942404775],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f62ce8149cd263d7196dc3688cf2979c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 21<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22bbbc415a00afc72063b354f2b7e4b6 = L.circleMarker(
+                [-20.549299354686642, -43.665083033282116],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_22bbbc415a00afc72063b354f2b7e4b6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 22<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 67.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5971589b09c788db0b3df9ec164ff08f = L.circleMarker(
+                [-20.534298240897854, -43.716760792875924],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5971589b09c788db0b3df9ec164ff08f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 23<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 63.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c11af7a759a9459bff24d1c07cf69da7 = L.circleMarker(
+                [-20.53740735571107, -43.692740572201],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c11af7a759a9459bff24d1c07cf69da7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 24<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 67.7%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a42021d927ff955acc3f3a37c14a3bb = L.circleMarker(
+                [-20.506611727150162, -43.7177472488919],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9a42021d927ff955acc3f3a37c14a3bb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 25<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 66.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68bc9eb3bbba7c246b0f1f7dcf3d34cd = L.circleMarker(
+                [-20.510198030754626, -43.67626387008456],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_68bc9eb3bbba7c246b0f1f7dcf3d34cd.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 26<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 66.4%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5c45b29ea3d0cfdcf892531b181f7e03 = L.circleMarker(
+                [-20.49726922593771, -43.67594993424158],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5c45b29ea3d0cfdcf892531b181f7e03.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 27<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac7a2f2845db4d3f1781feb74b2e002f = L.circleMarker(
+                [-20.545583670042237, -43.71419651213001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ac7a2f2845db4d3f1781feb74b2e002f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 28<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b2fc752012f04e3f1a591668b7e1e76e = L.circleMarker(
+                [-20.525484690818885, -43.69338305731407],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b2fc752012f04e3f1a591668b7e1e76e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 29<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 61.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f847c9718993b048dcaed3d589c4b45e = L.circleMarker(
+                [-20.549012166833716, -43.6889117843903],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f847c9718993b048dcaed3d589c4b45e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 31<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 73.79%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d64124d088b7b83b0f41a4ad2f70d18 = L.circleMarker(
+                [-20.537681721511785, -43.705996602263596],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_2d64124d088b7b83b0f41a4ad2f70d18.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 33<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 73.33%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0124833282051b53a1fd99320397c1c = L.circleMarker(
+                [-20.5204786827138, -43.66955401753488],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d0124833282051b53a1fd99320397c1c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 41<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 72.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5637f4a9a3f29ef746cf010e8b5d9d34 = L.circleMarker(
+                [-20.54920784181897, -43.696511723587946],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5637f4a9a3f29ef746cf010e8b5d9d34.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 61<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 53.87%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fb3e9b78191562ca6c9ad91ddacbc99 = L.circleMarker(
+                [-20.538869740958802, -43.70919210767347],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_8fb3e9b78191562ca6c9ad91ddacbc99.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 23 | <b>Seção:</b> 69<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 65.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65ccbf0ec12c00aca7efc2478eaa2bf0 = L.circleMarker(
+                [-20.51180693373323, -43.689542234673226],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_65ccbf0ec12c00aca7efc2478eaa2bf0.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 47<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 66.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a328071754809c8117b0d824d3d6b82a = L.circleMarker(
+                [-20.518103511163808, -43.678104135854596],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_a328071754809c8117b0d824d3d6b82a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 48<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 70.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b13efa861179b3c8f51b60fd4b972d1 = L.circleMarker(
+                [-20.537573562677558, -43.70983093619662],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_8b13efa861179b3c8f51b60fd4b972d1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 50<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 70.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a427d4ee75372b711659c316575cceb4 = L.circleMarker(
+                [-20.515444058967446, -43.70319702252194],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_a427d4ee75372b711659c316575cceb4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 51<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 65.22%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e50dde2a3a2f8923d355c74e5cc9657 = L.circleMarker(
+                [-20.50223417259933, -43.66219103860034],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9e50dde2a3a2f8923d355c74e5cc9657.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 52<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 65.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c4a4afbe529ec3dc93745c0773a2d7e0 = L.circleMarker(
+                [-20.550410074419318, -43.68290731654163],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c4a4afbe529ec3dc93745c0773a2d7e0.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 56<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.6%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ba540f4877b3b5c1ab8109e1cb7aa9e = L.circleMarker(
+                [-20.50245084489003, -43.69561399496513],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_1ba540f4877b3b5c1ab8109e1cb7aa9e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 57<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 69.12%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d41f12daba4bdc7a9f24787397222768 = L.circleMarker(
+                [-20.50891163630071, -43.69084544953786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d41f12daba4bdc7a9f24787397222768.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 58<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.77%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80bbebb3efa0a7bcfa5db6a388b76175 = L.circleMarker(
+                [-20.53038496900892, -43.7146397482479],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_80bbebb3efa0a7bcfa5db6a388b76175.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 59<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df85d3d1375cd1cea0c11f9f3fde48a1 = L.circleMarker(
+                [-20.541471230011293, -43.708418159778105],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_df85d3d1375cd1cea0c11f9f3fde48a1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 60<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 72.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_36e4708f2708330a77975f64e708a930 = L.circleMarker(
+                [-20.493367215667593, -43.70161486627115],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_36e4708f2708330a77975f64e708a930.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 61<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 72.57%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2eec84e0d1fcd54599232d3d6c9015ae = L.circleMarker(
+                [-20.530604327293243, -43.68660147689256],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_2eec84e0d1fcd54599232d3d6c9015ae.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 65<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6e4bc737693a6745b1c2dd24ac16a68 = L.circleMarker(
+                [-20.54523524939719, -43.7080931160442],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_e6e4bc737693a6745b1c2dd24ac16a68.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 66<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9bdf4d3cdb1f1eebc77f4c5f97e2499 = L.circleMarker(
+                [-20.544997017389992, -43.7086869569329],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b9bdf4d3cdb1f1eebc77f4c5f97e2499.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 67<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.43%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d707fae06f4a80e1227c4d46d428aaa7 = L.circleMarker(
+                [-20.499950338019154, -43.71764041483946],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d707fae06f4a80e1227c4d46d428aaa7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 68<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81d0b9cc134e9092cf61cc94be8ce9c4 = L.circleMarker(
+                [-20.514576438117988, -43.68403382256379],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_81d0b9cc134e9092cf61cc94be8ce9c4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 69<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 71.77%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61443ac40b439d44231c50a3e9fe006e = L.circleMarker(
+                [-20.50237230360354, -43.70816349297133],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_61443ac40b439d44231c50a3e9fe006e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 70<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_11ae4e87ecd091e75971473097401c59 = L.circleMarker(
+                [-20.507016092798374, -43.66757479921963],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_11ae4e87ecd091e75971473097401c59.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 71<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 74.73%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_869ec9dc6b693ac1747a1167f82f7c90 = L.circleMarker(
+                [-20.51862631451272, -43.67032187598477],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_869ec9dc6b693ac1747a1167f82f7c90.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 72<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 72.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d22a77c4d44722d359363a086a04234f = L.circleMarker(
+                [-20.49241305416124, -43.717648559006676],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d22a77c4d44722d359363a086a04234f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 79<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 65.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5f0c23f49890d3334e7f49e618eacd64 = L.circleMarker(
+                [-20.5280879373675, -43.70761972193786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5f0c23f49890d3334e7f49e618eacd64.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 80<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 68.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ea4f668798e7269ba6f1e9f25b15441 = L.circleMarker(
+                [-20.51767756212361, -43.68176133330222],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0ea4f668798e7269ba6f1e9f25b15441.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 81<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 74.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c70e8305684d5e23d7d21ef06e8fd0e7 = L.circleMarker(
+                [-20.50103572014482, -43.70904579155777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c70e8305684d5e23d7d21ef06e8fd0e7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 94<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 74.51%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51959d8a2b54405557a54d88f57a6c2d = L.circleMarker(
+                [-20.513688814858146, -43.713961289076494],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_51959d8a2b54405557a54d88f57a6c2d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 95<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 76.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ecb3fc63f3ae4d225456cbf0f8101b06 = L.circleMarker(
+                [-20.499097585981353, -43.66576914556516],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ecb3fc63f3ae4d225456cbf0f8101b06.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 96<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 75.78%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0709728620d4cd0032e3ec8da5e9274b = L.circleMarker(
+                [-20.516158871284595, -43.68763741440048],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0709728620d4cd0032e3ec8da5e9274b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 105<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 75.0%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_404a5ab6e2caf722c6a827d4dee3bccf = L.circleMarker(
+                [-20.508525689827106, -43.693539738421286],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_404a5ab6e2caf722c6a827d4dee3bccf.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 50 | <b>Seção:</b> 108<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 66.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_415f38de3685f79e32558b8686d22fb2 = L.circleMarker(
+                [-20.54805053698066, -43.67482283454255],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_415f38de3685f79e32558b8686d22fb2.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5eaacecd9d43a4c77462cfb4dbefc9ab = L.circleMarker(
+                [-20.53712610346091, -43.673450180134],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5eaacecd9d43a4c77462cfb4dbefc9ab.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0758371ff9a51f1e5969c502d50fae54 = L.circleMarker(
+                [-20.533436722183875, -43.71047540513828],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0758371ff9a51f1e5969c502d50fae54.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.79%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66c9091c36e1f60b016e3f9cb8d970cf = L.circleMarker(
+                [-20.546012481384583, -43.71608415114627],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_66c9091c36e1f60b016e3f9cb8d970cf.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.59%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db78c8e878ec7e98b80f6336c4096363 = L.circleMarker(
+                [-20.53683254681834, -43.696036929055616],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_db78c8e878ec7e98b80f6336c4096363.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22f20ba22505b7d805441362be834d25 = L.circleMarker(
+                [-20.544739914235418, -43.6964852826188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_22f20ba22505b7d805441362be834d25.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 31.67%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_291fa2240798d88acb412ae78276d192 = L.circleMarker(
+                [-20.534121583813395, -43.693878519917796],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_291fa2240798d88acb412ae78276d192.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7b685cb4c59229458570cfde882bed6 = L.circleMarker(
+                [-20.512658933344138, -43.6781554490324],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c7b685cb4c59229458570cfde882bed6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 29.23%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e68b719d3046eacf0346348a716579f5 = L.circleMarker(
+                [-20.528910069261798, -43.6814981271624],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_e68b719d3046eacf0346348a716579f5.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.4%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7572b35f4aa006dabe3e60a402314415 = L.circleMarker(
+                [-20.52858914197299, -43.66285008731804],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_7572b35f4aa006dabe3e60a402314415.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.55%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b881cf2b590ff89df457351ccbb7298 = L.circleMarker(
+                [-20.53822957815371, -43.71599492773088],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9b881cf2b590ff89df457351ccbb7298.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cf3daddbce77f21e78df779d5207b6b6 = L.circleMarker(
+                [-20.534781330677056, -43.69774272307386],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_cf3daddbce77f21e78df779d5207b6b6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 38.99%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5078b2a5b7c62250fa00a8338cfce5da = L.circleMarker(
+                [-20.49460072473725, -43.701541843676296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5078b2a5b7c62250fa00a8338cfce5da.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 46.21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5179cb0f017042c89a45bd5636dfd2ab = L.circleMarker(
+                [-20.511917876885207, -43.670199647818826],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_5179cb0f017042c89a45bd5636dfd2ab.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_20b20176782feca0f71e4ab22e80ea52 = L.circleMarker(
+                [-20.51425213965998, -43.70698061996478],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_20b20176782feca0f71e4ab22e80ea52.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f068534cb13c7e755a48244021fc7bf = L.circleMarker(
+                [-20.540531681108117, -43.71048746549355],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9f068534cb13c7e755a48244021fc7bf.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_071d4e7fa2f5454560c9dfe87b4748c9 = L.circleMarker(
+                [-20.50705239212298, -43.694983187130006],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_071d4e7fa2f5454560c9dfe87b4748c9.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3596d610d1eff7fa6d4d16cc94ba9608 = L.circleMarker(
+                [-20.540995850374287, -43.696587101609936],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_3596d610d1eff7fa6d4d16cc94ba9608.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.18%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4defff4df1354795045ea5e91eb2efe1 = L.circleMarker(
+                [-20.528032673494543, -43.70518729131998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_4defff4df1354795045ea5e91eb2efe1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7cb5733feacbf300bb9f2d0900a7929 = L.circleMarker(
+                [-20.491428598961807, -43.70691161312707],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b7cb5733feacbf300bb9f2d0900a7929.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 35.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6d3f56b322325f2f31a3642839296b0 = L.circleMarker(
+                [-20.512400014408755, -43.66650406404344],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d6d3f56b322325f2f31a3642839296b0.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.73%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_740cf6ad217f09c2085b17e8b707f0a2 = L.circleMarker(
+                [-20.51738301537352, -43.69531215529679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_740cf6ad217f09c2085b17e8b707f0a2.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b21d6724b9e094cff85c48917835d854 = L.circleMarker(
+                [-20.509723144940608, -43.670219053714284],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b21d6724b9e094cff85c48917835d854.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3f0638d227df737fddebd89128d5b54 = L.circleMarker(
+                [-20.500228884788612, -43.68888048125301],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d3f0638d227df737fddebd89128d5b54.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 41.51%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce5d43e9cebb18cfb6cb44bff3265ced = L.circleMarker(
+                [-20.504240005307228, -43.7188647002285],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ce5d43e9cebb18cfb6cb44bff3265ced.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af55df7370798f6cafbe787938aceff1 = L.circleMarker(
+                [-20.537057115682156, -43.661943051895236],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_af55df7370798f6cafbe787938aceff1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.41%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_668f95858089e4ca83a7aae824542bf7 = L.circleMarker(
+                [-20.54887398536576, -43.671738344895196],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_668f95858089e4ca83a7aae824542bf7.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 48.8%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_896b11c6b14b8a1aee7177a2d18f34c4 = L.circleMarker(
+                [-20.531872817116458, -43.663760224562914],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_896b11c6b14b8a1aee7177a2d18f34c4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.91%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d8443afcd3a0ce7455b6aea22f6d4f4 = L.circleMarker(
+                [-20.53473554744146, -43.66631798101951],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_7d8443afcd3a0ce7455b6aea22f6d4f4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 38.31%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b43209be1d596ba10965c3b0a68f980 = L.circleMarker(
+                [-20.53814102938482, -43.67097825593514],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_3b43209be1d596ba10965c3b0a68f980.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaf7faef881751b60be0bb329d335a99 = L.circleMarker(
+                [-20.494225417139898, -43.71192133336376],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_aaf7faef881751b60be0bb329d335a99.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 47.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f41946f50b79c49c6202a752c37cd9e4 = L.circleMarker(
+                [-20.498217942411642, -43.69276153247296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f41946f50b79c49c6202a752c37cd9e4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 47.29%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c3814fadef493d1d7e7cf4917d88801 = L.circleMarker(
+                [-20.531919327152092, -43.709075162048045],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0c3814fadef493d1d7e7cf4917d88801.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 45.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07159115385fc3f167b36d8619105aeb = L.circleMarker(
+                [-20.511473680082307, -43.69783758244703],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_07159115385fc3f167b36d8619105aeb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.03%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71fb784e06a4de84918b84b74204021e = L.circleMarker(
+                [-20.52706208593636, -43.718381876001665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_71fb784e06a4de84918b84b74204021e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cde3aebab33c4a4d4141f19f39fb55f4 = L.circleMarker(
+                [-20.495927144615568, -43.69916161286138],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_cde3aebab33c4a4d4141f19f39fb55f4.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_472e092cabf8d94ec4553d5b4baa20a6 = L.circleMarker(
+                [-20.523268888844758, -43.662781469373215],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_472e092cabf8d94ec4553d5b4baa20a6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fcb062e28919e3175e853ede6abe794e = L.circleMarker(
+                [-20.534907190010117, -43.70598781650967],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_fcb062e28919e3175e853ede6abe794e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac66c9f5e9b8f239ec1692637899c11d = L.circleMarker(
+                [-20.53600234953836, -43.67485576388308],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ac66c9f5e9b8f239ec1692637899c11d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.01%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fb31ba627f54cfbc40928ea0c066ba6b = L.circleMarker(
+                [-20.517117911950212, -43.69459949795965],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_fb31ba627f54cfbc40928ea0c066ba6b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d5287af9928fa8562ecf885615089acc = L.circleMarker(
+                [-20.535035503488626, -43.696519550840584],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d5287af9928fa8562ecf885615089acc.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.5%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fac788c3a406a03681a6a9ce1776009d = L.circleMarker(
+                [-20.51572484058659, -43.66446094154842],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_fac788c3a406a03681a6a9ce1776009d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 38.72%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60faa2a95e5be139376e736749a58324 = L.circleMarker(
+                [-20.496930626983854, -43.66217463863043],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_60faa2a95e5be139376e736749a58324.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 46.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b05e1591d1e6d287a16b3805494636b = L.circleMarker(
+                [-20.52683596969158, -43.68855390059566],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0b05e1591d1e6d287a16b3805494636b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6be6d7e39c3dd544bf2a700c98183f4b = L.circleMarker(
+                [-20.537640754450564, -43.67879550348222],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_6be6d7e39c3dd544bf2a700c98183f4b.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.5%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34520c188998f452a2f714dc4e29f4c6 = L.circleMarker(
+                [-20.490947743610295, -43.712612190483554],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_34520c188998f452a2f714dc4e29f4c6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_abd9d84771219e692df0c47a27447c88 = L.circleMarker(
+                [-20.520228422379414, -43.70409753047032],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_abd9d84771219e692df0c47a27447c88.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 46.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_860e2d454bc75405d2cd8bdd64ac87e6 = L.circleMarker(
+                [-20.545345435269574, -43.663777438101846],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_860e2d454bc75405d2cd8bdd64ac87e6.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2613b0a9021f479208107b3043aaf95 = L.circleMarker(
+                [-20.54797301747452, -43.687149182551025],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_e2613b0a9021f479208107b3043aaf95.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a36934da01f6811fcfee0c2075c8f8f = L.circleMarker(
+                [-20.544221052178962, -43.68936828791754],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_7a36934da01f6811fcfee0c2075c8f8f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 47.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_685d24ffab5a2cdaf63b2eaed6e64dd2 = L.circleMarker(
+                [-20.513153237497814, -43.677021466377255],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_685d24ffab5a2cdaf63b2eaed6e64dd2.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 45.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4aa05f1417ff3ca3f8017f7eddba886 = L.circleMarker(
+                [-20.503275238138222, -43.71847008362555],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_a4aa05f1417ff3ca3f8017f7eddba886.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.77%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b820e135b78a4dd37d8f2cd266d3d63a = L.circleMarker(
+                [-20.52547040199202, -43.68684934433246],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b820e135b78a4dd37d8f2cd266d3d63a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 46.84%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6da9ed38526dd70c3328cfa3bd606db9 = L.circleMarker(
+                [-20.546988337630882, -43.69172897702482],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_6da9ed38526dd70c3328cfa3bd606db9.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 54.27%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c7a59a13b0f3f3b0675405abfe45657 = L.circleMarker(
+                [-20.52790284280961, -43.6707368064771],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_1c7a59a13b0f3f3b0675405abfe45657.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 48.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3397d6ff4c009947ae4ca2ea6087715a = L.circleMarker(
+                [-20.491032717185597, -43.71245403632363],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_3397d6ff4c009947ae4ca2ea6087715a.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 47.18%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b31a65ff16662216fe7701c54d2bbded = L.circleMarker(
+                [-20.51905313929405, -43.66425326580353],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b31a65ff16662216fe7701c54d2bbded.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 41.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bcfe2b0169bd91dc2774d008e0d8cffb = L.circleMarker(
+                [-20.492535297343185, -43.71709331208556],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_bcfe2b0169bd91dc2774d008e0d8cffb.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 49.71%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_16a32b14a7588d0a007faedd6259d23c = L.circleMarker(
+                [-20.49915321786593, -43.710750502341156],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_16a32b14a7588d0a007faedd6259d23c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 56.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a985733620afa87f9fa63c60bb3b1e5 = L.circleMarker(
+                [-20.55011113868343, -43.686197893613],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9a985733620afa87f9fa63c60bb3b1e5.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 61.04%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9cd3787f75cd500827bf01d582263467 = L.circleMarker(
+                [-20.50755669083839, -43.68138724678375],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9cd3787f75cd500827bf01d582263467.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 67.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4981493f95b45f2c0a8651e3ae5ac014 = L.circleMarker(
+                [-20.509897377858408, -43.707787766299944],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_4981493f95b45f2c0a8651e3ae5ac014.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.5%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1adc39e3495a81e7249adf3dedf0d235 = L.circleMarker(
+                [-20.518581780175474, -43.71470680316317],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_1adc39e3495a81e7249adf3dedf0d235.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.61%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38f6110e1388d864a00a8b775ac6e893 = L.circleMarker(
+                [-20.534790488602848, -43.668482761152234],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_38f6110e1388d864a00a8b775ac6e893.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 45.29%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b851f2c34cc63f86f939ca0c4aa30e5f = L.circleMarker(
+                [-20.51234229208521, -43.70712707913268],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b851f2c34cc63f86f939ca0c4aa30e5f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.74%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9229ece0b0bcb6658a0039fa63ea09d3 = L.circleMarker(
+                [-20.544106869584247, -43.68622885078799],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_9229ece0b0bcb6658a0039fa63ea09d3.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c26dce5b7cf20e14b98f7c5501bb453f = L.circleMarker(
+                [-20.524714084959854, -43.68473710938007],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c26dce5b7cf20e14b98f7c5501bb453f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.2%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0f2b1a89dfe4ce4598e114d08e26435 = L.circleMarker(
+                [-20.52357657762025, -43.696746505079844],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_d0f2b1a89dfe4ce4598e114d08e26435.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce30779fcd1f0ac2d404fc495fbf4d63 = L.circleMarker(
+                [-20.493571044348737, -43.686879662642525],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ce30779fcd1f0ac2d404fc495fbf4d63.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 47.21%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2aa02826766e92fdff0d995d2cf4930d = L.circleMarker(
+                [-20.49824882357731, -43.69053303706808],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_2aa02826766e92fdff0d995d2cf4930d.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 48.02%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e72748f0c8376f5aaf1fcb2f933fdbe = L.circleMarker(
+                [-20.534996656954934, -43.66581762453581],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_3e72748f0c8376f5aaf1fcb2f933fdbe.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 41.1%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f55c1f4e66b031a01cb3d623b6f35e69 = L.circleMarker(
+                [-20.520764833216983, -43.70964444803459],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f55c1f4e66b031a01cb3d623b6f35e69.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7178d3939d51db3bb42b1a5892c3751 = L.circleMarker(
+                [-20.540080887168195, -43.67892849195263],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f7178d3939d51db3bb42b1a5892c3751.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 49.65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6746974737852c2c00ea36e23f7a2f69 = L.circleMarker(
+                [-20.496042329639312, -43.70757884284305],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_6746974737852c2c00ea36e23f7a2f69.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 45.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca173d9e7dda7694d433a92ddb7bc821 = L.circleMarker(
+                [-20.498568885809796, -43.698152849192525],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_ca173d9e7dda7694d433a92ddb7bc821.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 43.57%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80a76eb89949838ac14f329f2eed040e = L.circleMarker(
+                [-20.53289331251308, -43.6815985866224],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_80a76eb89949838ac14f329f2eed040e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 38.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55a461422cf47e397fceb1efa0adf754 = L.circleMarker(
+                [-20.51246303030804, -43.70390017521207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_55a461422cf47e397fceb1efa0adf754.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 46.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d82fea759db4685dc48485efc9a9c7f = L.circleMarker(
+                [-20.51426178731371, -43.702929368223685],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_8d82fea759db4685dc48485efc9a9c7f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 48.67%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00eaea6b332797d9e9e51492f2503d51 = L.circleMarker(
+                [-20.541629643887024, -43.67678813045513],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_00eaea6b332797d9e9e51492f2503d51.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 50.18%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54ff9df96fcee3f30174b4cce1b31f0e = L.circleMarker(
+                [-20.505049351995492, -43.717547413130404],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_54ff9df96fcee3f30174b4cce1b31f0e.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 49.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f15d3871d0b819e328b5158b7b78139 = L.circleMarker(
+                [-20.518437258192822, -43.69440286864288],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0f15d3871d0b819e328b5158b7b78139.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 52.68%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbe8bb40c1f27544d33f0732ecb194ce = L.circleMarker(
+                [-20.504082411282166, -43.66199273354873],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_bbe8bb40c1f27544d33f0732ecb194ce.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 52.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f240894f66f4678ccb19ae3802e44398 = L.circleMarker(
+                [-20.51897877966829, -43.66213421312869],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_f240894f66f4678ccb19ae3802e44398.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 50.88%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1ed1645a16c16691c2366e1482b4640 = L.circleMarker(
+                [-20.550765686232324, -43.71750435673402],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b1ed1645a16c16691c2366e1482b4640.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 41.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaa3bd3028b265e1165ac262a4dc793f = L.circleMarker(
+                [-20.53135063657972, -43.70911074126398],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_aaa3bd3028b265e1165ac262a4dc793f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 42.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_939915b45d77815666a012cacf2ca982 = L.circleMarker(
+                [-20.549631395456853, -43.70598797511497],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_939915b45d77815666a012cacf2ca982.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4228ee8ee519166586f36b54c809a8c1 = L.circleMarker(
+                [-20.495054083024126, -43.66590443732037],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_4228ee8ee519166586f36b54c809a8c1.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 39.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0dd07674fb7b009948e7066a1301ce71 = L.circleMarker(
+                [-20.49807668733061, -43.66904814957881],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_0dd07674fb7b009948e7066a1301ce71.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 44.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c71d489458b3b857638633357c5ae1df = L.circleMarker(
+                [-20.50090006823833, -43.66914378545093],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#fcae91", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_c71d489458b3b857638633357c5ae1df.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 36.45%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b41acbf1f043e4d98ce24862761839f = L.circleMarker(
+                [-20.53234915247584, -43.699728374675665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef3b2c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_1b41acbf1f043e4d98ce24862761839f.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 40.24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b56168d43070af331f2fae1df76aca5c = L.circleMarker(
+                [-20.54732449001035, -43.712435190058564],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ce283ab5757e82a957a80c9346af255d);
+        
+    
+            circle_marker_b56168d43070af331f2fae1df76aca5c.bindTooltip(
+                `<div>
+                     <b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>% Votos (LUIZ INÁCIO LULA DA SILVA):</b> 52.94%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
