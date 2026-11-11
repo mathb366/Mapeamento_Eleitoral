@@ -1,0 +1,3022 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ccc7328d41d588f3a6c7e767c95fc5e0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 50px; left: 50px; width: 250px; height: 80px;
+            background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+            padding: 10px; border-radius: 5px;">
+    <b>Zonas de Dominância (2º Turno)</b><br>
+    <i style="background:#cb181d; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> LUIZ INÁCIO LULA DA SILVA (PT)<br>
+    <i style="background:#4292c6; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> FLAVIO NANTES BOLSONARO<br>
+    <small><i>(Quanto mais escuro, maior a % de votos)</i></small>
+</div>
+    
+            <div class="folium-map" id="map_ccc7328d41d588f3a6c7e767c95fc5e0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ccc7328d41d588f3a6c7e767c95fc5e0 = L.map(
+                "map_ccc7328d41d588f3a6c7e767c95fc5e0",
+                {
+                    center: [-20.5208, -43.6919],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0da8bd2d8d9ec960c3925d3f4de25cd0 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0da8bd2d8d9ec960c3925d3f4de25cd0.addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            var circle_marker_5c791de6c26beabd95affa2cd40c3b3a = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5c791de6c26beabd95affa2cd40c3b3a.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.08%<br><b>% Bolsonaro:</b> 47.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_337d45d0da07f253dffa1e52a9b3c3dc = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_337d45d0da07f253dffa1e52a9b3c3dc.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.08%<br><b>% Bolsonaro:</b> 47.92%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_94a6592eaa5cb6cd9b9de17a39be2f20 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_94a6592eaa5cb6cd9b9de17a39be2f20.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.12%<br><b>% Bolsonaro:</b> 50.88%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d0c5196ce5daabcd1ff5dafe308fe4e0 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d0c5196ce5daabcd1ff5dafe308fe4e0.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.12%<br><b>% Bolsonaro:</b> 50.88%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6bbd137395a5d514a0dfb7fba0873193 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6bbd137395a5d514a0dfb7fba0873193.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.60%<br><b>% Bolsonaro:</b> 52.40%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a65559fa3a93bca232228aa68a7d5743 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a65559fa3a93bca232228aa68a7d5743.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.60%<br><b>% Bolsonaro:</b> 52.40%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_083a825b6e9b4a7803485de3c616f1dc = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_083a825b6e9b4a7803485de3c616f1dc.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.66%<br><b>% Bolsonaro:</b> 50.34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_19b68a83cd86e2c4ac5367f2a02aa61e = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_19b68a83cd86e2c4ac5367f2a02aa61e.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.66%<br><b>% Bolsonaro:</b> 50.34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b0ec52d9aa89d16a115c850796c562a9 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b0ec52d9aa89d16a115c850796c562a9.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ed22b9610b1c902aa89c7cf27800c79 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6ed22b9610b1c902aa89c7cf27800c79.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1288cf47a2d37fa48528b273bec67566 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_1288cf47a2d37fa48528b273bec67566.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 37.20%<br><b>% Bolsonaro:</b> 62.80%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93c9d7e84f154db3971fda8cb35cf53e = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_93c9d7e84f154db3971fda8cb35cf53e.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 37.20%<br><b>% Bolsonaro:</b> 62.80%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e645c1bea599b2245cab785faff3d82 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_8e645c1bea599b2245cab785faff3d82.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 41.86%<br><b>% Bolsonaro:</b> 58.14%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_441fb2a3da5ca1cb036cd1014335ad08 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_441fb2a3da5ca1cb036cd1014335ad08.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 41.86%<br><b>% Bolsonaro:</b> 58.14%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d04563b2d6a3ddd9de67b40f988fa2f = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_7d04563b2d6a3ddd9de67b40f988fa2f.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 36.05%<br><b>% Bolsonaro:</b> 63.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57f74f44e3167f550e1db5e7f2505e90 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_57f74f44e3167f550e1db5e7f2505e90.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 36.05%<br><b>% Bolsonaro:</b> 63.95%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_319fee8ff8d4dfee591dd60e9782c358 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_319fee8ff8d4dfee591dd60e9782c358.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 44.11%<br><b>% Bolsonaro:</b> 55.89%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_12c3a6a57a389ff344a8d908a20b971e = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_12c3a6a57a389ff344a8d908a20b971e.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 44.11%<br><b>% Bolsonaro:</b> 55.89%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63966f6fc1cc69c7fd64618985fa3275 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_63966f6fc1cc69c7fd64618985fa3275.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 45.68%<br><b>% Bolsonaro:</b> 54.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cad2c462518279081049267f554ccc70 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_cad2c462518279081049267f554ccc70.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 45.68%<br><b>% Bolsonaro:</b> 54.32%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f51b3d6a592ff79f88e4c7070488bccb = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f51b3d6a592ff79f88e4c7070488bccb.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.85%<br><b>% Bolsonaro:</b> 49.15%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b654932eef14cb9dbde3eccf14e893a2 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b654932eef14cb9dbde3eccf14e893a2.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.85%<br><b>% Bolsonaro:</b> 49.15%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_654a9f61fb08f29c56d29d9f96d76bf2 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_654a9f61fb08f29c56d29d9f96d76bf2.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.83%<br><b>% Bolsonaro:</b> 48.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b4e0bd0b1c51ed0b52b7d7caedacadb = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_9b4e0bd0b1c51ed0b52b7d7caedacadb.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.83%<br><b>% Bolsonaro:</b> 48.17%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13f41d449a51d21e91df6ad03cd06391 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_13f41d449a51d21e91df6ad03cd06391.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.45%<br><b>% Bolsonaro:</b> 46.55%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4010d5ef8f4f5b9c7b91af38e4eee21c = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_4010d5ef8f4f5b9c7b91af38e4eee21c.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.45%<br><b>% Bolsonaro:</b> 46.55%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe66956cb8723fc15832bc54c07f80b5 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_fe66956cb8723fc15832bc54c07f80b5.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.10%<br><b>% Bolsonaro:</b> 45.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67d55c67e7e4335172b616f07339af5c = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_67d55c67e7e4335172b616f07339af5c.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.10%<br><b>% Bolsonaro:</b> 45.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee4021c6e0024a1a239eda97bc3ad57b = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ee4021c6e0024a1a239eda97bc3ad57b.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.18%<br><b>% Bolsonaro:</b> 49.82%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90f865c8002998db227cc8a777c2d966 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_90f865c8002998db227cc8a777c2d966.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.18%<br><b>% Bolsonaro:</b> 49.82%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e6312727337f0b35270cd186d7a94c0 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_1e6312727337f0b35270cd186d7a94c0.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.81%<br><b>% Bolsonaro:</b> 51.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7842806bc4d02b632c828b63e7efde34 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_7842806bc4d02b632c828b63e7efde34.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.81%<br><b>% Bolsonaro:</b> 51.19%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_619ef67a01b9e154d03c261174718c04 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_619ef67a01b9e154d03c261174718c04.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c40805f9d95e88b6edb8379e4c08c8f = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_1c40805f9d95e88b6edb8379e4c08c8f.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f870d3229b3524b42e690596bf5b4f9b = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f870d3229b3524b42e690596bf5b4f9b.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c7d6981627b6a9bde1ffc8479f3bf02 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_8c7d6981627b6a9bde1ffc8479f3bf02.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e531e277361ddb9b8cc08e1897c2e65f = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e531e277361ddb9b8cc08e1897c2e65f.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.25%<br><b>% Bolsonaro:</b> 48.75%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52a63e73835ed64bb71a7595415551e3 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_52a63e73835ed64bb71a7595415551e3.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.25%<br><b>% Bolsonaro:</b> 48.75%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33fd6cced92307efc2874b44e6b42269 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_33fd6cced92307efc2874b44e6b42269.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 39.17%<br><b>% Bolsonaro:</b> 60.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70b0e06b2e9c50fe76cbe62b8d161c18 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2171b5", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_70b0e06b2e9c50fe76cbe62b8d161c18.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 39.17%<br><b>% Bolsonaro:</b> 60.83%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e78dcb8dc9f0f4a88f1178541c48e2d2 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e78dcb8dc9f0f4a88f1178541c48e2d2.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.42%<br><b>% Bolsonaro:</b> 51.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c71d1cb83cfc836fd06b20f620c07d80 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c71d1cb83cfc836fd06b20f620c07d80.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.42%<br><b>% Bolsonaro:</b> 51.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c7e716b361dd0923f5112602e7628f5 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_2c7e716b361dd0923f5112602e7628f5.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 41.01%<br><b>% Bolsonaro:</b> 58.99%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_041025d794651f461e0e84df9bc46f64 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_041025d794651f461e0e84df9bc46f64.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 41.01%<br><b>% Bolsonaro:</b> 58.99%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bdb0912d60309aecae0e92199cbb940 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_4bdb0912d60309aecae0e92199cbb940.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 42.47%<br><b>% Bolsonaro:</b> 57.53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76b2f4095410fc6c9871ccf94dcd27c2 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_76b2f4095410fc6c9871ccf94dcd27c2.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 42.47%<br><b>% Bolsonaro:</b> 57.53%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8bb3e66451f3281f9904f0e39a075f8 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a8bb3e66451f3281f9904f0e39a075f8.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.40%<br><b>% Bolsonaro:</b> 51.60%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c1f5123cc53a7039de7969112b2a656 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0c1f5123cc53a7039de7969112b2a656.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.40%<br><b>% Bolsonaro:</b> 51.60%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_782490161666e1858a2d755971897bd9 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_782490161666e1858a2d755971897bd9.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.54%<br><b>% Bolsonaro:</b> 46.46%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b8392a8182d339687234ace7ee8861d = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0b8392a8182d339687234ace7ee8861d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.54%<br><b>% Bolsonaro:</b> 46.46%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f351f65ce65687c1f53b27ce1a1de305 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f351f65ce65687c1f53b27ce1a1de305.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.44%<br><b>% Bolsonaro:</b> 48.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2d98cd0150c96da00e0eef4685e657a = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d2d98cd0150c96da00e0eef4685e657a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.44%<br><b>% Bolsonaro:</b> 48.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd6b0c6a8470f30603c9df6af0d20aa4 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_fd6b0c6a8470f30603c9df6af0d20aa4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.34%<br><b>% Bolsonaro:</b> 44.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9edff9215a76b61b49b54902f79756d9 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_9edff9215a76b61b49b54902f79756d9.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.34%<br><b>% Bolsonaro:</b> 44.66%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3f90f4afa11894612417bfad92ae844 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d3f90f4afa11894612417bfad92ae844.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.84%<br><b>% Bolsonaro:</b> 50.16%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb0c11875623b36e459c85001e7fcc6c = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_cb0c11875623b36e459c85001e7fcc6c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.84%<br><b>% Bolsonaro:</b> 50.16%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e0cb606f1223f3756a7982491bc8bb8 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0e0cb606f1223f3756a7982491bc8bb8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.42%<br><b>% Bolsonaro:</b> 52.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f3428e32815e1e8dd0b48c538b4162f = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0f3428e32815e1e8dd0b48c538b4162f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.42%<br><b>% Bolsonaro:</b> 52.58%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76d0bffb8bfbe0decad743ab7ab1e91b = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_76d0bffb8bfbe0decad743ab7ab1e91b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.31%<br><b>% Bolsonaro:</b> 48.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ded83f5723dfe63ac5f188f44bdfe63 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_7ded83f5723dfe63ac5f188f44bdfe63.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.31%<br><b>% Bolsonaro:</b> 48.69%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ce57019f1a7f7e18e8dd87f13577727f = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ce57019f1a7f7e18e8dd87f13577727f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.14%<br><b>% Bolsonaro:</b> 46.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dbbb73d3af026a1508d41aab3b24e873 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_dbbb73d3af026a1508d41aab3b24e873.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.14%<br><b>% Bolsonaro:</b> 46.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a46c8ad6991190ee98ca146deb900556 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a46c8ad6991190ee98ca146deb900556.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.43%<br><b>% Bolsonaro:</b> 42.57%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76e82e0b04c1552fc10b3673e39645ea = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_76e82e0b04c1552fc10b3673e39645ea.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.43%<br><b>% Bolsonaro:</b> 42.57%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3e64f3e46d87b5291b5929f318a8f49 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b3e64f3e46d87b5291b5929f318a8f49.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.10%<br><b>% Bolsonaro:</b> 44.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0ebaf1f9da190e071af5fb921b19034 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c0ebaf1f9da190e071af5fb921b19034.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.10%<br><b>% Bolsonaro:</b> 44.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f729399f11bb9a8adbbd99ae9b274e79 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f729399f11bb9a8adbbd99ae9b274e79.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.53%<br><b>% Bolsonaro:</b> 47.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5094ff2c6041a5495dbdbb68a10bc22 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c5094ff2c6041a5495dbdbb68a10bc22.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.53%<br><b>% Bolsonaro:</b> 47.47%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_21198d428d2da750f0fe8e0501e593b4 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_21198d428d2da750f0fe8e0501e593b4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 43.04%<br><b>% Bolsonaro:</b> 56.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6e647ae604dcfb4c7fdcf8109aa7b4bb = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6e647ae604dcfb4c7fdcf8109aa7b4bb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 43.04%<br><b>% Bolsonaro:</b> 56.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_625eb56f5d119081e791e1b285233856 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_625eb56f5d119081e791e1b285233856.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.33%<br><b>% Bolsonaro:</b> 46.67%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2994a89b57ec98dd8f75efc831f3539a = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_2994a89b57ec98dd8f75efc831f3539a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.33%<br><b>% Bolsonaro:</b> 46.67%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac96f2684e889160012f66664fb64b8a = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ac96f2684e889160012f66664fb64b8a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.22%<br><b>% Bolsonaro:</b> 49.78%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d839065319353eb31689114e0d992024 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d839065319353eb31689114e0d992024.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.22%<br><b>% Bolsonaro:</b> 49.78%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72f8b1502879e7e074e7fe581a9978c4 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_72f8b1502879e7e074e7fe581a9978c4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.72%<br><b>% Bolsonaro:</b> 52.28%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc296eb1b69e8ec2d51b32fca8950feb = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_bc296eb1b69e8ec2d51b32fca8950feb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.72%<br><b>% Bolsonaro:</b> 52.28%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f256858ef5bb96949a0298e0f6689c2f = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f256858ef5bb96949a0298e0f6689c2f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.19%<br><b>% Bolsonaro:</b> 52.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ee99aec2ad43150572256b41abef013 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5ee99aec2ad43150572256b41abef013.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.19%<br><b>% Bolsonaro:</b> 52.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d3dede1a2f4b56e81d4355bfd3960a1b = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d3dede1a2f4b56e81d4355bfd3960a1b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96a187987d4ff47f62b71fef599fec9a = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_96a187987d4ff47f62b71fef599fec9a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bec9f80ea865c192f6c397663f078c86 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_bec9f80ea865c192f6c397663f078c86.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.14%<br><b>% Bolsonaro:</b> 50.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1a008e2ca376e12fd6e37169e5bbc08 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b1a008e2ca376e12fd6e37169e5bbc08.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.14%<br><b>% Bolsonaro:</b> 50.86%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_517ca035548687e7b433bc905d4511eb = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_517ca035548687e7b433bc905d4511eb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.46%<br><b>% Bolsonaro:</b> 52.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_032f7b8341261b9961548732be6ffb4f = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_032f7b8341261b9961548732be6ffb4f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.46%<br><b>% Bolsonaro:</b> 52.54%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dfe916349ba820a085e886b1d61fe13f = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_dfe916349ba820a085e886b1d61fe13f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.74%<br><b>% Bolsonaro:</b> 46.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71f9af20d21125dc27715ea71d332609 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_71f9af20d21125dc27715ea71d332609.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.74%<br><b>% Bolsonaro:</b> 46.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1534e7551f490968747fad8d49a464c6 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_1534e7551f490968747fad8d49a464c6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.10%<br><b>% Bolsonaro:</b> 47.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bfd10c02e64525fa4bd9f2d00caaff0 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_8bfd10c02e64525fa4bd9f2d00caaff0.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.10%<br><b>% Bolsonaro:</b> 47.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6262bfd1b165ebcb5244f2c0b1a3f4d9 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6262bfd1b165ebcb5244f2c0b1a3f4d9.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.52%<br><b>% Bolsonaro:</b> 49.48%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da97d256f46ea967f560e5408df5363c = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_da97d256f46ea967f560e5408df5363c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.52%<br><b>% Bolsonaro:</b> 49.48%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a1a539f752c6e241cfefd6b483a8353 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5a1a539f752c6e241cfefd6b483a8353.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.50%<br><b>% Bolsonaro:</b> 50.50%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df93a595b156d32c542ddfc2daceb3fc = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_df93a595b156d32c542ddfc2daceb3fc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.50%<br><b>% Bolsonaro:</b> 50.50%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b69449f3efb1c3f844ca694d3cbb91c = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_2b69449f3efb1c3f844ca694d3cbb91c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.04%<br><b>% Bolsonaro:</b> 45.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3f81ce13580a17f1b6cebd806af7063 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b3f81ce13580a17f1b6cebd806af7063.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.04%<br><b>% Bolsonaro:</b> 45.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca3945a5a25dfb4df704235ff5c6a882 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ca3945a5a25dfb4df704235ff5c6a882.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.41%<br><b>% Bolsonaro:</b> 51.59%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5456f94439c147f7a3ba983d1f8ae310 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5456f94439c147f7a3ba983d1f8ae310.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.41%<br><b>% Bolsonaro:</b> 51.59%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f4ae5506a01e52d242d32f0a1838a66 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0f4ae5506a01e52d242d32f0a1838a66.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.03%<br><b>% Bolsonaro:</b> 50.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6fbf73794ee590dfaecd5a1ce4a5ba3 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c6fbf73794ee590dfaecd5a1ce4a5ba3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.03%<br><b>% Bolsonaro:</b> 50.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae50d70ee4739848df5a8d90e63d5ec7 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ae50d70ee4739848df5a8d90e63d5ec7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.66%<br><b>% Bolsonaro:</b> 44.34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a4ee8f7c873d394eefbfa23191f89c9a = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a4ee8f7c873d394eefbfa23191f89c9a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.66%<br><b>% Bolsonaro:</b> 44.34%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e00899b52232d749ddf82625570238f = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_9e00899b52232d749ddf82625570238f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.56%<br><b>% Bolsonaro:</b> 48.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a7d36820f80e078bba42ac2d52e8fa3 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5a7d36820f80e078bba42ac2d52e8fa3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.56%<br><b>% Bolsonaro:</b> 48.44%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d606eb03824add6c6909c93d62a8648 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_2d606eb03824add6c6909c93d62a8648.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.76%<br><b>% Bolsonaro:</b> 48.24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c0a00af9640202ee4f77d34238c97d71 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c0a00af9640202ee4f77d34238c97d71.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.76%<br><b>% Bolsonaro:</b> 48.24%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_868539b5979b432cd400af32fe5f55a5 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_868539b5979b432cd400af32fe5f55a5.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.24%<br><b>% Bolsonaro:</b> 45.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e144544ea99ba994802ff15fd9af6d8c = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e144544ea99ba994802ff15fd9af6d8c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.24%<br><b>% Bolsonaro:</b> 45.76%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddb1c61fe406e6b6f616100a6b19754f = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ddb1c61fe406e6b6f616100a6b19754f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 63.94%<br><b>% Bolsonaro:</b> 36.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a39ca55f67017f706cbe4f1c8291c8dd = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a39ca55f67017f706cbe4f1c8291c8dd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 63.94%<br><b>% Bolsonaro:</b> 36.06%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7e91085c36bf84d1ab1e192566db608 = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b7e91085c36bf84d1ab1e192566db608.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.06%<br><b>% Bolsonaro:</b> 42.94%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3766d12bf039534101fdb34e760a006f = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_3766d12bf039534101fdb34e760a006f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.06%<br><b>% Bolsonaro:</b> 42.94%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e473bcb7bda3172f5c912d462549702d = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e473bcb7bda3172f5c912d462549702d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.27%<br><b>% Bolsonaro:</b> 46.73%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97818b247a99f1e1235bb1996628c6db = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_97818b247a99f1e1235bb1996628c6db.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.27%<br><b>% Bolsonaro:</b> 46.73%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ccde0d29aae9182ba5346be1595f679 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_7ccde0d29aae9182ba5346be1595f679.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.44%<br><b>% Bolsonaro:</b> 50.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc4e8c8bb62c248cc7cb830304b2fbf7 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_fc4e8c8bb62c248cc7cb830304b2fbf7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.44%<br><b>% Bolsonaro:</b> 50.56%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b8971235f4ee706f63995162f34db9e = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_8b8971235f4ee706f63995162f34db9e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.25%<br><b>% Bolsonaro:</b> 43.75%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01ac3d0f2c45d3efdf41c88ecaf288fd = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_01ac3d0f2c45d3efdf41c88ecaf288fd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.25%<br><b>% Bolsonaro:</b> 43.75%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7d54a832cf217aade18105026749637 = L.circleMarker(
+                [-20.4912047, -43.601871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f7d54a832cf217aade18105026749637.bindTooltip(
+                `<div>
+                     <b>Local:</b> BIBLIOTECA COMUNITÁRIA PROFESSOR REINALDO ALVES DE BRITO<br><b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 66.51%<br><b>% Bolsonaro:</b> 33.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6c3d528d167af9f97b8796e1a66f86d = L.circleMarker(
+                [-20.4912047, -43.601871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e6c3d528d167af9f97b8796e1a66f86d.bindTooltip(
+                `<div>
+                     <b>Local:</b> BIBLIOTECA COMUNITÁRIA PROFESSOR REINALDO ALVES DE BRITO<br><b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 66.51%<br><b>% Bolsonaro:</b> 33.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a6e8f56ea6bdc09787b8c6410d4512d = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_9a6e8f56ea6bdc09787b8c6410d4512d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 72.48%<br><b>% Bolsonaro:</b> 27.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17b7cd1b247e3a10a002d16db8d58d9a = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_17b7cd1b247e3a10a002d16db8d58d9a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 72.48%<br><b>% Bolsonaro:</b> 27.52%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13620e72fa11e870f568cf34cc9a8fd6 = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_13620e72fa11e870f568cf34cc9a8fd6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 73.26%<br><b>% Bolsonaro:</b> 26.74%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_83f2441165237674159fc23e660d1b18 = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#67000d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_83f2441165237674159fc23e660d1b18.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 73.26%<br><b>% Bolsonaro:</b> 26.74%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ca8f79d2b01e26feec7222ac0da5585d = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ca8f79d2b01e26feec7222ac0da5585d.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 45.70%<br><b>% Bolsonaro:</b> 54.30%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c072e5025fa461eaa9d8d8a3ec0a861a = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c072e5025fa461eaa9d8d8a3ec0a861a.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 45.70%<br><b>% Bolsonaro:</b> 54.30%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9e97a7dacf1d54a1a5ee8304471be77 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d9e97a7dacf1d54a1a5ee8304471be77.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.40%<br><b>% Bolsonaro:</b> 49.60%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd6fcc99b85bc62e21412595ced6d666 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_fd6fcc99b85bc62e21412595ced6d666.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 50.40%<br><b>% Bolsonaro:</b> 49.60%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6c369796e922c61057ede9932a39e1a = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_f6c369796e922c61057ede9932a39e1a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.13%<br><b>% Bolsonaro:</b> 48.87%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad0263e7a4bbcb64ac1ffcd17885c14f = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ad0263e7a4bbcb64ac1ffcd17885c14f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.13%<br><b>% Bolsonaro:</b> 48.87%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c6610bd38797830fca5ca0c1024601c8 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c6610bd38797830fca5ca0c1024601c8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.04%<br><b>% Bolsonaro:</b> 48.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d01c283b9c4a1850818379c80975d8ec = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d01c283b9c4a1850818379c80975d8ec.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.04%<br><b>% Bolsonaro:</b> 48.96%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6bd23a4fd637f78414a33f12502c90c4 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6bd23a4fd637f78414a33f12502c90c4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.03%<br><b>% Bolsonaro:</b> 50.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ec58fece6db8d10b0d8de0591766fa2 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_3ec58fece6db8d10b0d8de0591766fa2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 49.03%<br><b>% Bolsonaro:</b> 50.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b7919514510e8a587f0f466c41471c7 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6b7919514510e8a587f0f466c41471c7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.72%<br><b>% Bolsonaro:</b> 44.28%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0de8fbfaa3180932abca7a7c8aef4680 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_0de8fbfaa3180932abca7a7c8aef4680.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.72%<br><b>% Bolsonaro:</b> 44.28%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1c6d372a0cf24e9f44b82d631752c1c = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d1c6d372a0cf24e9f44b82d631752c1c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.62%<br><b>% Bolsonaro:</b> 52.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_97c21be7a900f2fdbaaca46c47d7b96e = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_97c21be7a900f2fdbaaca46c47d7b96e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 47.62%<br><b>% Bolsonaro:</b> 52.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e770f41a40427e779dca803b12d28625 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e770f41a40427e779dca803b12d28625.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.19%<br><b>% Bolsonaro:</b> 43.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7bae0a7191f96af4200e0952e5c228d = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c7bae0a7191f96af4200e0952e5c228d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.19%<br><b>% Bolsonaro:</b> 43.81%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_df2ec0e4e144bd690ec58b9d6f4caddc = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_df2ec0e4e144bd690ec58b9d6f4caddc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.10%<br><b>% Bolsonaro:</b> 43.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52154a0fe208a187393e9c269c5f6429 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_52154a0fe208a187393e9c269c5f6429.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.10%<br><b>% Bolsonaro:</b> 43.90%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a07ed04593398f0cc850ebd0c4ef355a = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a07ed04593398f0cc850ebd0c4ef355a.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 46.74%<br><b>% Bolsonaro:</b> 53.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a688d7790eab48855cb2284e5211e3ad = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a688d7790eab48855cb2284e5211e3ad.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 46.74%<br><b>% Bolsonaro:</b> 53.26%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a58d2def3a21e77797bea75f3f21a540 = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a58d2def3a21e77797bea75f3f21a540.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.03%<br><b>% Bolsonaro:</b> 45.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_00edf706aef9d61a63dd09f253621374 = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_00edf706aef9d61a63dd09f253621374.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 54.03%<br><b>% Bolsonaro:</b> 45.97%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_deb8bcab790ff4cccbeb55a9830b727a = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_deb8bcab790ff4cccbeb55a9830b727a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.61%<br><b>% Bolsonaro:</b> 43.39%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78aa6000dbda0e784449c1d7d0969ec1 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_78aa6000dbda0e784449c1d7d0969ec1.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.61%<br><b>% Bolsonaro:</b> 43.39%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44b87ee4b4a7e1ef1072503495399fcc = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_44b87ee4b4a7e1ef1072503495399fcc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.63%<br><b>% Bolsonaro:</b> 44.37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd2dbfa111c3bea289448f0d655cebbb = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_dd2dbfa111c3bea289448f0d655cebbb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 55.63%<br><b>% Bolsonaro:</b> 44.37%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_844a95bbd2ef0f6b8bbc764c8cce7406 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_844a95bbd2ef0f6b8bbc764c8cce7406.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.01%<br><b>% Bolsonaro:</b> 47.99%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_34957bfa41ff1740e8c69ebb0326d752 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_34957bfa41ff1740e8c69ebb0326d752.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.01%<br><b>% Bolsonaro:</b> 47.99%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ff92c891d17c910b056d1ab4d1886c7 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_6ff92c891d17c910b056d1ab4d1886c7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.07%<br><b>% Bolsonaro:</b> 51.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e91f3fae87abc294ac79adabf6187cfe = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e91f3fae87abc294ac79adabf6187cfe.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.07%<br><b>% Bolsonaro:</b> 51.93%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4dc2b0d9c4227432e6e700240508848d = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_4dc2b0d9c4227432e6e700240508848d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.67%<br><b>% Bolsonaro:</b> 42.33%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b52865961d9e1ae9a50f7fc6398c0ba2 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_b52865961d9e1ae9a50f7fc6398c0ba2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 57.67%<br><b>% Bolsonaro:</b> 42.33%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb6727fbc81a7ec08be966e05bfedad5 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_eb6727fbc81a7ec08be966e05bfedad5.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.51%<br><b>% Bolsonaro:</b> 43.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db269488c53e3b1bd39364d6751d7571 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_db269488c53e3b1bd39364d6751d7571.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.51%<br><b>% Bolsonaro:</b> 43.49%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41cd06278a367bcabd2530e4a951e75c = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_41cd06278a367bcabd2530e4a951e75c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.62%<br><b>% Bolsonaro:</b> 43.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd4db6190b3aa017ebd8b57af91d0740 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_cd4db6190b3aa017ebd8b57af91d0740.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 56.62%<br><b>% Bolsonaro:</b> 43.38%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_932b49213fb6609bfadac353b401bb11 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_932b49213fb6609bfadac353b401bb11.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 59.65%<br><b>% Bolsonaro:</b> 40.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e12d5e7254fe3a6461b1382738f7b7b2 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e12d5e7254fe3a6461b1382738f7b7b2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 59.65%<br><b>% Bolsonaro:</b> 40.35%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9803908544e1a3c7e44fc29f1aeef6a5 = L.circleMarker(
+                [-20.5073333, -43.6567219],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_9803908544e1a3c7e44fc29f1aeef6a5.bindTooltip(
+                `<div>
+                     <b>Local:</b> POSTO DE SAÚDE DE CARREIRAS<br><b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 60.36%<br><b>% Bolsonaro:</b> 39.64%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be8dfda82cf6fd8ed35529819a5eae20 = L.circleMarker(
+                [-20.5073333, -43.6567219],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_be8dfda82cf6fd8ed35529819a5eae20.bindTooltip(
+                `<div>
+                     <b>Local:</b> POSTO DE SAÚDE DE CARREIRAS<br><b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 60.36%<br><b>% Bolsonaro:</b> 39.64%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb5e1751e96ddee8398c64e9fe9239e2 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_cb5e1751e96ddee8398c64e9fe9239e2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 62.93%<br><b>% Bolsonaro:</b> 37.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85e48f81fda62e6cb2d6fff42b3664a8 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_85e48f81fda62e6cb2d6fff42b3664a8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 62.93%<br><b>% Bolsonaro:</b> 37.07%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ab5e9d9659e002fa024fc6aa8b1ef5b8 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_ab5e9d9659e002fa024fc6aa8b1ef5b8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 63.64%<br><b>% Bolsonaro:</b> 36.36%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4623f8f7309cc551dbd1772001b776c3 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_4623f8f7309cc551dbd1772001b776c3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 63.64%<br><b>% Bolsonaro:</b> 36.36%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64cd38c693e028090c91417aedaa7f50 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_64cd38c693e028090c91417aedaa7f50.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.89%<br><b>% Bolsonaro:</b> 48.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a47db19e4baaaa3c4920446d4fa53ac2 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a47db19e4baaaa3c4920446d4fa53ac2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 51.89%<br><b>% Bolsonaro:</b> 48.11%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7421d9d96b7530f9110d1ae5ba0520d = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d7421d9d96b7530f9110d1ae5ba0520d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.15%<br><b>% Bolsonaro:</b> 47.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2763721264c13b62e40e76afd58af29 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e2763721264c13b62e40e76afd58af29.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.15%<br><b>% Bolsonaro:</b> 47.85%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e207af814397d15709f5e9765406b77a = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_e207af814397d15709f5e9765406b77a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.92%<br><b>% Bolsonaro:</b> 51.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8661d808202f6e368bc3678bf7dff13 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c8661d808202f6e368bc3678bf7dff13.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 48.92%<br><b>% Bolsonaro:</b> 51.08%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_462fd381f9160c0f08c4209d0ea63980 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_462fd381f9160c0f08c4209d0ea63980.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5ef6c3d924b9580dc356412428286511 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_5ef6c3d924b9580dc356412428286511.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 50.00%<br><b>% Bolsonaro:</b> 50.00%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d17c06565a20c0d8126285c69211f41e = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_d17c06565a20c0d8126285c69211f41e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.35%<br><b>% Bolsonaro:</b> 46.65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76500fc14fd69f229be85d12a9ec8e28 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_76500fc14fd69f229be85d12a9ec8e28.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 53.35%<br><b>% Bolsonaro:</b> 46.65%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c6346fc657e54ef7303e30a472b26d4 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_2c6346fc657e54ef7303e30a472b26d4.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 40.38%<br><b>% Bolsonaro:</b> 59.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2aa6eaab393b25d34eff965cb3a59d9 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c2aa6eaab393b25d34eff965cb3a59d9.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>Líder:</b> FLAVIO NANTES BOLSONARO<br><b>% Lula:</b> 40.38%<br><b>% Bolsonaro:</b> 59.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57a273bf5f8d0594bfdcfafff30c62eb = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_57a273bf5f8d0594bfdcfafff30c62eb.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.02%<br><b>% Bolsonaro:</b> 47.98%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bbeb87d6b2123c872dc6b10de3845a0 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#cb181d", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_4bbeb87d6b2123c872dc6b10de3845a0.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 52.02%<br><b>% Bolsonaro:</b> 47.98%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a08cc3669d966477245f3d3eb423cadb = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_a08cc3669d966477245f3d3eb423cadb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 60.38%<br><b>% Bolsonaro:</b> 39.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c8f3e8ed7afc07684c5ede86438adcb3 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#a50f15", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_ccc7328d41d588f3a6c7e767c95fc5e0);
+        
+    
+            circle_marker_c8f3e8ed7afc07684c5ede86438adcb3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>Líder:</b> LUIZ INÁCIO LULA DA SILVA<br><b>% Lula:</b> 60.38%<br><b>% Bolsonaro:</b> 39.62%
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

@@ -1,0 +1,3025 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f79ab04ffd2247ffb9d9b6863c24a5b0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 50px; left: 50px; width: 150px; height: 120px;
+                background-color: white; border:2px solid grey; z-index:9999; font-size:14px;
+                padding: 10px; border-radius: 5px;">
+        <b>% Bolsonaro – 1º Turno</b><br>
+        <i style="background:#08306b; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> > 70%<br>
+        <i style="background:#2171b5; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 60% - 70%<br>
+        <i style="background:#4292c6; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 50% - 60%<br>
+        <i style="background:#6baed6; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> 40% - 50%<br>
+        <i style="background:#c6dbef; width:15px; height:15px; float:left; margin-right:5px; border:1px solid black;"></i> < 40%<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_f79ab04ffd2247ffb9d9b6863c24a5b0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f79ab04ffd2247ffb9d9b6863c24a5b0 = L.map(
+                "map_f79ab04ffd2247ffb9d9b6863c24a5b0",
+                {
+                    center: [-20.5208, -43.6919],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cfd8992c824c71e68ce79c8651865172 = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Tiles \u0026copy; Esri \u0026mdash; Source: Esri, DeLorme, NAVTEQ, USGS, Intermap, iPC, NRCAN, Esri Japan, METI, Esri China (Hong Kong), Esri (Thailand), TomTom, 2012",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cfd8992c824c71e68ce79c8651865172.addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            var circle_marker_f34ee1aab8dfb1a73290b06c17866147 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f34ee1aab8dfb1a73290b06c17866147.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>% Bolsonaro:</b> 43.78%<br><b>Votos válidos:</b> 233
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e4cf555f39a8f93b09416c654e1b23f4 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e4cf555f39a8f93b09416c654e1b23f4.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 138<br><b>% Bolsonaro:</b> 43.78%<br><b>Votos válidos:</b> 233
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23f4410d489dc261827d54a7a953db40 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_23f4410d489dc261827d54a7a953db40.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>% Bolsonaro:</b> 45.85%<br><b>Votos válidos:</b> 229
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_731ef5d9b920b5c3accd8070317addea = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_731ef5d9b920b5c3accd8070317addea.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 139<br><b>% Bolsonaro:</b> 45.85%<br><b>Votos válidos:</b> 229
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_380682723f87267c6f94606fc1174725 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_380682723f87267c6f94606fc1174725.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>% Bolsonaro:</b> 48.20%<br><b>Votos válidos:</b> 222
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5a09982e36c63c36a08fb2ea2cc02a02 = L.circleMarker(
+                [-20.51422, -43.701786],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_5a09982e36c63c36a08fb2ea2cc02a02.bindTooltip(
+                `<div>
+                     <b>Local:</b> SPARTA TÊNIS CLUBE (ANTIGA AEA)<br><b>Zona:</b> 88 | <b>Seção:</b> 140<br><b>% Bolsonaro:</b> 48.20%<br><b>Votos válidos:</b> 222
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51dbfaf016b00884766b33520a6248c8 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_51dbfaf016b00884766b33520a6248c8.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 271
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_251d6f7ff577904c7bb9846dfb4a5581 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_251d6f7ff577904c7bb9846dfb4a5581.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 141<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 271
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b33a18b1a650de44916d3c0cf721620 = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4b33a18b1a650de44916d3c0cf721620.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>% Bolsonaro:</b> 48.62%<br><b>Votos válidos:</b> 253
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d83041495acd4050f61091ec4eacac6e = L.circleMarker(
+                [-20.5122489, -43.7221832],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d83041495acd4050f61091ec4eacac6e.bindTooltip(
+                `<div>
+                     <b>Local:</b> CAMARA MUNICIPAL DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 142<br><b>% Bolsonaro:</b> 48.62%<br><b>Votos válidos:</b> 253
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1710e07df8fcf887b5eaa2e9d006b0d7 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_1710e07df8fcf887b5eaa2e9d006b0d7.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>% Bolsonaro:</b> 56.23%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9160f999aa47d9af3f4e88a5b8aa0a15 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9160f999aa47d9af3f4e88a5b8aa0a15.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 143<br><b>% Bolsonaro:</b> 56.23%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d2f91cc90331e15efcc7a87e86069787 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d2f91cc90331e15efcc7a87e86069787.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>% Bolsonaro:</b> 51.74%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a95b6e5f380fd20a92b1e197a4ec22a = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9a95b6e5f380fd20a92b1e197a4ec22a.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 144<br><b>% Bolsonaro:</b> 51.74%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e573d1994b2ca01efb1533eb52498cf6 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e573d1994b2ca01efb1533eb52498cf6.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>% Bolsonaro:</b> 59.86%<br><b>Votos válidos:</b> 284
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ccc8dd499145e85c3ee346906e76c03 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6ccc8dd499145e85c3ee346906e76c03.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 145<br><b>% Bolsonaro:</b> 59.86%<br><b>Votos válidos:</b> 284
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2933aa3f3566e4e1f16e143684b39bdb = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_2933aa3f3566e4e1f16e143684b39bdb.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>% Bolsonaro:</b> 54.77%<br><b>Votos válidos:</b> 283
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a44f6330365c4a6fe4a5936f407313a7 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a44f6330365c4a6fe4a5936f407313a7.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 146<br><b>% Bolsonaro:</b> 54.77%<br><b>Votos válidos:</b> 283
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_296fec6860dfe3c13e2c7fad8b627e36 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_296fec6860dfe3c13e2c7fad8b627e36.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>% Bolsonaro:</b> 47.39%<br><b>Votos válidos:</b> 268
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d7eeb4bfa16b25a8be88a00bbd97300 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_0d7eeb4bfa16b25a8be88a00bbd97300.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 147<br><b>% Bolsonaro:</b> 47.39%<br><b>Votos válidos:</b> 268
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_436eac0ac3ae69ab3e5fef49fb7901c0 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_436eac0ac3ae69ab3e5fef49fb7901c0.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>% Bolsonaro:</b> 45.93%<br><b>Votos válidos:</b> 270
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_02e02d4093faf53a1c9592d6486f46bf = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_02e02d4093faf53a1c9592d6486f46bf.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 148<br><b>% Bolsonaro:</b> 45.93%<br><b>Votos válidos:</b> 270
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_19cc1f0bed4be27b4f328fc4ed4f98e7 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_19cc1f0bed4be27b4f328fc4ed4f98e7.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_844ef0a7d15dbe5a3525d82627243b53 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_844ef0a7d15dbe5a3525d82627243b53.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 149<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_473841e8348b994f30b820b3f75ac624 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_473841e8348b994f30b820b3f75ac624.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>% Bolsonaro:</b> 45.85%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c77c8c9b6b43df53b45c15cc04c511d8 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c77c8c9b6b43df53b45c15cc04c511d8.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 150<br><b>% Bolsonaro:</b> 45.85%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_333c25e637e11189e65e566ba5a30948 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_333c25e637e11189e65e566ba5a30948.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>% Bolsonaro:</b> 49.29%<br><b>Votos válidos:</b> 282
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_161f72543106242ab0ce96b217aff772 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_161f72543106242ab0ce96b217aff772.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 151<br><b>% Bolsonaro:</b> 49.29%<br><b>Votos válidos:</b> 282
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9830cafa50dabe7075df72b1c71362fb = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9830cafa50dabe7075df72b1c71362fb.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>% Bolsonaro:</b> 48.20%<br><b>Votos válidos:</b> 278
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4d57bdd2fa8cad7a72ce8b2575fdc91 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f4d57bdd2fa8cad7a72ce8b2575fdc91.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 152<br><b>% Bolsonaro:</b> 48.20%<br><b>Votos válidos:</b> 278
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_98dfb244e2e7cb31cb0b749dad15fa54 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_98dfb244e2e7cb31cb0b749dad15fa54.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>% Bolsonaro:</b> 51.90%<br><b>Votos válidos:</b> 289
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_10497dfb0abcdfd05b10008717475a88 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_10497dfb0abcdfd05b10008717475a88.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 153<br><b>% Bolsonaro:</b> 51.90%<br><b>Votos válidos:</b> 289
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d54190046f602dda01ca995f52fa4d94 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d54190046f602dda01ca995f52fa4d94.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>% Bolsonaro:</b> 50.34%<br><b>Votos válidos:</b> 292
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b55976de6a3fa465421209b1b5690612 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_b55976de6a3fa465421209b1b5690612.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 154<br><b>% Bolsonaro:</b> 50.34%<br><b>Votos válidos:</b> 292
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc84061c864401abed1f320614af5b87 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_dc84061c864401abed1f320614af5b87.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>% Bolsonaro:</b> 48.64%<br><b>Votos válidos:</b> 294
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4401ad9b4b36edca0c18912ab0d4352 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f4401ad9b4b36edca0c18912ab0d4352.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 155<br><b>% Bolsonaro:</b> 48.64%<br><b>Votos válidos:</b> 294
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7ac9a0dcdf196124110e0159b12c511 = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c7ac9a0dcdf196124110e0159b12c511.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>% Bolsonaro:</b> 45.09%<br><b>Votos válidos:</b> 275
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a18f0bdde2250d00474ca6ab5c64176f = L.circleMarker(
+                [-20.5269186, -43.6938259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a18f0bdde2250d00474ca6ab5c64176f.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLÉGIO MUNICIPAL JOÃO XXIII<br><b>Zona:</b> 88 | <b>Seção:</b> 156<br><b>% Bolsonaro:</b> 45.09%<br><b>Votos válidos:</b> 275
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_886852a11c725ce1e148c0f40e4d7767 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_886852a11c725ce1e148c0f40e4d7767.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>% Bolsonaro:</b> 54.03%<br><b>Votos válidos:</b> 211
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0549078b3fd4648369543b046d4af84b = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_0549078b3fd4648369543b046d4af84b.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 157<br><b>% Bolsonaro:</b> 54.03%<br><b>Votos válidos:</b> 211
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_594251072e0ef88ff3024878b2eb81e9 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_594251072e0ef88ff3024878b2eb81e9.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>% Bolsonaro:</b> 49.77%<br><b>Votos válidos:</b> 219
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7dbcf5662100daa1b8179c892f3fdaac = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7dbcf5662100daa1b8179c892f3fdaac.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 158<br><b>% Bolsonaro:</b> 49.77%<br><b>Votos válidos:</b> 219
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_464300dc9ba60e3dda87edb4ffb27924 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_464300dc9ba60e3dda87edb4ffb27924.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>% Bolsonaro:</b> 53.46%<br><b>Votos válidos:</b> 217
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_43ba1867883adb3c339df4a43b263663 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_43ba1867883adb3c339df4a43b263663.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 159<br><b>% Bolsonaro:</b> 53.46%<br><b>Votos válidos:</b> 217
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_657a61192c0ecdb8609cf7980911c1eb = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_657a61192c0ecdb8609cf7980911c1eb.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>% Bolsonaro:</b> 54.21%<br><b>Votos válidos:</b> 214
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f5b66f102d2ff576d048cf7fcec1069 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_1f5b66f102d2ff576d048cf7fcec1069.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 160<br><b>% Bolsonaro:</b> 54.21%<br><b>Votos válidos:</b> 214
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9616ffe4518df449e77e434a8c2a6876 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9616ffe4518df449e77e434a8c2a6876.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>% Bolsonaro:</b> 45.28%<br><b>Votos válidos:</b> 212
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_168d010fdaecf6629239e1413da01a29 = L.circleMarker(
+                [-20.513828, -43.713131],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_168d010fdaecf6629239e1413da01a29.bindTooltip(
+                `<div>
+                     <b>Local:</b> INSTITUTO FEDERAL DE MINAS GERAIS - IFMG<br><b>Zona:</b> 88 | <b>Seção:</b> 161<br><b>% Bolsonaro:</b> 45.28%<br><b>Votos válidos:</b> 212
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e3701c2262b22d1685f046c75c97ebc = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_1e3701c2262b22d1685f046c75c97ebc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>% Bolsonaro:</b> 45.42%<br><b>Votos válidos:</b> 273
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91cf89e1a5a3a0228769063a87ea1c53 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_91cf89e1a5a3a0228769063a87ea1c53.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 162<br><b>% Bolsonaro:</b> 45.42%<br><b>Votos válidos:</b> 273
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e163ffaf98b322f4a61ba1ab1fcef144 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e163ffaf98b322f4a61ba1ab1fcef144.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>% Bolsonaro:</b> 47.46%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de8713c66df978833918b7145e055693 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_de8713c66df978833918b7145e055693.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 163<br><b>% Bolsonaro:</b> 47.46%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1506ab10c13bd4d63f14996b137b734a = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_1506ab10c13bd4d63f14996b137b734a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>% Bolsonaro:</b> 45.02%<br><b>Votos válidos:</b> 291
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2798e95cb59da46b3bd4bed8931320d = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c2798e95cb59da46b3bd4bed8931320d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 164<br><b>% Bolsonaro:</b> 45.02%<br><b>Votos válidos:</b> 291
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f690bd2981322e1dfc80a9b5b525fb94 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f690bd2981322e1dfc80a9b5b525fb94.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>% Bolsonaro:</b> 47.06%<br><b>Votos válidos:</b> 289
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f994cb52c38b33665c37a58f660a148b = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f994cb52c38b33665c37a58f660a148b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 165<br><b>% Bolsonaro:</b> 47.06%<br><b>Votos válidos:</b> 289
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9c3d277519ffbe2832d9ea6a5cf6721 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d9c3d277519ffbe2832d9ea6a5cf6721.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>% Bolsonaro:</b> 50.85%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b972c3214ba08f3dbffe0bab2b59446 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_1b972c3214ba08f3dbffe0bab2b59446.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 166<br><b>% Bolsonaro:</b> 50.85%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22083378ce4fac91559de0ea19f76561 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_22083378ce4fac91559de0ea19f76561.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>% Bolsonaro:</b> 45.05%<br><b>Votos válidos:</b> 293
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2643044322fbf738bfafede06e1ef64 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f2643044322fbf738bfafede06e1ef64.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 167<br><b>% Bolsonaro:</b> 45.05%<br><b>Votos válidos:</b> 293
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13e09221fa8bd0cf96a4682fc6a49a4e = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_13e09221fa8bd0cf96a4682fc6a49a4e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>% Bolsonaro:</b> 44.95%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_91cd8c5872f867cf0e343a560830fc6c = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_91cd8c5872f867cf0e343a560830fc6c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 168<br><b>% Bolsonaro:</b> 44.95%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a7db51b950dc1c68b18b2e5a98b91db = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_2a7db51b950dc1c68b18b2e5a98b91db.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>% Bolsonaro:</b> 41.88%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fbdf4230beaf028423010c82956780f3 = L.circleMarker(
+                [-20.5215352, -43.686188],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_fbdf4230beaf028423010c82956780f3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL CONEGO LUIZ VIEIRA DA SILVA<br><b>Zona:</b> 88 | <b>Seção:</b> 169<br><b>% Bolsonaro:</b> 41.88%<br><b>Votos válidos:</b> 277
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_288c639293ef28d0c44ad6709a5b14a4 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_288c639293ef28d0c44ad6709a5b14a4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>% Bolsonaro:</b> 43.35%<br><b>Votos válidos:</b> 233
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_883113dd04c4da5589b7231eed0ef02a = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_883113dd04c4da5589b7231eed0ef02a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 170<br><b>% Bolsonaro:</b> 43.35%<br><b>Votos válidos:</b> 233
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_db3595ddd53d6690e326993720e000fc = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_db3595ddd53d6690e326993720e000fc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>% Bolsonaro:</b> 43.85%<br><b>Votos válidos:</b> 244
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_31fb2099770fdddb5c6cb52cb8a2c28f = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_31fb2099770fdddb5c6cb52cb8a2c28f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 171<br><b>% Bolsonaro:</b> 43.85%<br><b>Votos válidos:</b> 244
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a2c62e2deaa055acd9eee6f9d70a0c4 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_0a2c62e2deaa055acd9eee6f9d70a0c4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>% Bolsonaro:</b> 52.91%<br><b>Votos válidos:</b> 223
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2859e77f2765cddaf71ae6c3ed89e37b = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_2859e77f2765cddaf71ae6c3ed89e37b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 172<br><b>% Bolsonaro:</b> 52.91%<br><b>Votos válidos:</b> 223
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70d7a831e817dc656f8defded34b5b0a = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_70d7a831e817dc656f8defded34b5b0a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>% Bolsonaro:</b> 45.61%<br><b>Votos válidos:</b> 228
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8c0331c7919f35457eb49964f72374f1 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8c0331c7919f35457eb49964f72374f1.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 173<br><b>% Bolsonaro:</b> 45.61%<br><b>Votos válidos:</b> 228
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c51533d76bdde66cc651a80e8eea6064 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c51533d76bdde66cc651a80e8eea6064.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>% Bolsonaro:</b> 43.56%<br><b>Votos válidos:</b> 225
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0be05267450c00a8d88f3f856377ee63 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_0be05267450c00a8d88f3f856377ee63.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 174<br><b>% Bolsonaro:</b> 43.56%<br><b>Votos válidos:</b> 225
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3edb1f5b4547d503a093d8d8b3dc2c92 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3edb1f5b4547d503a093d8d8b3dc2c92.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>% Bolsonaro:</b> 49.58%<br><b>Votos válidos:</b> 236
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_61b521f39e169de59befa46a4c7b1738 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_61b521f39e169de59befa46a4c7b1738.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 175<br><b>% Bolsonaro:</b> 49.58%<br><b>Votos válidos:</b> 236
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_82967e17fcb78c80f7e78de8f6906bd1 = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_82967e17fcb78c80f7e78de8f6906bd1.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>% Bolsonaro:</b> 48.61%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_199be94fa16cbe647c903eafd9e491bd = L.circleMarker(
+                [-20.5163832, -43.7032085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_199be94fa16cbe647c903eafd9e491bd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL IRACEMA DE ALMEIDA<br><b>Zona:</b> 88 | <b>Seção:</b> 176<br><b>% Bolsonaro:</b> 48.61%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f14acbb9b6c15e0ca11cb04107f68cfd = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f14acbb9b6c15e0ca11cb04107f68cfd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f491b2f9bf0840f52c95052038c7c92 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4f491b2f9bf0840f52c95052038c7c92.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 177<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0def7a427d626a62a177bea2ae56eae7 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_0def7a427d626a62a177bea2ae56eae7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 279
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_66b1c54b1dcfdb7a4780eaa30897adb6 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_66b1c54b1dcfdb7a4780eaa30897adb6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 178<br><b>% Bolsonaro:</b> 49.82%<br><b>Votos válidos:</b> 279
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74cf8ff50b314bd8736116cff0319115 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_74cf8ff50b314bd8736116cff0319115.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>% Bolsonaro:</b> 50.51%<br><b>Votos válidos:</b> 297
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28849565a6598a4d2d846c6ee9545b5c = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_28849565a6598a4d2d846c6ee9545b5c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 179<br><b>% Bolsonaro:</b> 50.51%<br><b>Votos válidos:</b> 297
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63eb1c5dfbad56c497d0e49b9613edd6 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_63eb1c5dfbad56c497d0e49b9613edd6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>% Bolsonaro:</b> 43.17%<br><b>Votos válidos:</b> 278
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6525035a2e4f81d5f058eddb471ef662 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6525035a2e4f81d5f058eddb471ef662.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 180<br><b>% Bolsonaro:</b> 43.17%<br><b>Votos válidos:</b> 278
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8845d225f5ecc7435f80d5962a12fe81 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8845d225f5ecc7435f80d5962a12fe81.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>% Bolsonaro:</b> 49.08%<br><b>Votos válidos:</b> 273
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7a75f3234e7f479d712d85c33a775b3 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_b7a75f3234e7f479d712d85c33a775b3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 181<br><b>% Bolsonaro:</b> 49.08%<br><b>Votos válidos:</b> 273
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22578c5bf1d53f6405c74cfad56b1046 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_22578c5bf1d53f6405c74cfad56b1046.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>% Bolsonaro:</b> 50.18%<br><b>Votos válidos:</b> 279
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26545079fa19a3217813b0f8b8a313b6 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_26545079fa19a3217813b0f8b8a313b6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 182<br><b>% Bolsonaro:</b> 50.18%<br><b>Votos válidos:</b> 279
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6270cc13296dc433d2b831a9226b37ea = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6270cc13296dc433d2b831a9226b37ea.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>% Bolsonaro:</b> 48.32%<br><b>Votos válidos:</b> 298
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9c050df65c7a7c63445f21736db7151 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e9c050df65c7a7c63445f21736db7151.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 183<br><b>% Bolsonaro:</b> 48.32%<br><b>Votos válidos:</b> 298
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76e3989f0a5c1d66b70fdf1693b4dddd = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_76e3989f0a5c1d66b70fdf1693b4dddd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>% Bolsonaro:</b> 41.26%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf3eb019f45a871da175a5cb590b0160 = L.circleMarker(
+                [-20.5336788, -43.7129145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_bf3eb019f45a871da175a5cb590b0160.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA ESTADUAL LEVINDO DA COSTA CARVALHO<br><b>Zona:</b> 88 | <b>Seção:</b> 184<br><b>% Bolsonaro:</b> 41.26%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96610666dae55c0575534f0063388505 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_96610666dae55c0575534f0063388505.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>% Bolsonaro:</b> 50.00%<br><b>Votos válidos:</b> 152
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8e643427e62e8541e862b3e76dc746b = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f8e643427e62e8541e862b3e76dc746b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 185<br><b>% Bolsonaro:</b> 50.00%<br><b>Votos válidos:</b> 152
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b8a50602327bf3baceff20a7abdaaf3a = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_b8a50602327bf3baceff20a7abdaaf3a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>% Bolsonaro:</b> 46.88%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a876da7dd74261f8e37f0d61af189af0 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a876da7dd74261f8e37f0d61af189af0.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 186<br><b>% Bolsonaro:</b> 46.88%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e6f5d71f69fb913a6171ffed714fbb1 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3e6f5d71f69fb913a6171ffed714fbb1.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>% Bolsonaro:</b> 43.36%<br><b>Votos válidos:</b> 286
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8216fdda85a27694740c0dae6d5d46e = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f8216fdda85a27694740c0dae6d5d46e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 190<br><b>% Bolsonaro:</b> 43.36%<br><b>Votos válidos:</b> 286
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_360356581c8e066143fc69b5f2515128 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_360356581c8e066143fc69b5f2515128.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>% Bolsonaro:</b> 46.88%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6ad902e69e4c0922c3f2a63a1501833 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f6ad902e69e4c0922c3f2a63a1501833.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 191<br><b>% Bolsonaro:</b> 46.88%<br><b>Votos válidos:</b> 288
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fff623d3d498e6871e126e7f23498afa = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_fff623d3d498e6871e126e7f23498afa.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>% Bolsonaro:</b> 47.39%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ed3ee7d024835a202b395e304babd803 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_ed3ee7d024835a202b395e304babd803.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 193<br><b>% Bolsonaro:</b> 47.39%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5fef548abf2ca226abe6688306af840 = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a5fef548abf2ca226abe6688306af840.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>% Bolsonaro:</b> 44.24%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc9c05732dc9c33ec0a372e8fba800dd = L.circleMarker(
+                [-20.527435, -43.6941157],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_dc9c05732dc9c33ec0a372e8fba800dd.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA AUXILIADORA TORRES<br><b>Zona:</b> 88 | <b>Seção:</b> 195<br><b>% Bolsonaro:</b> 44.24%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb924aad42579a83fc63cfd71d69dfe3 = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_cb924aad42579a83fc63cfd71d69dfe3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>% Bolsonaro:</b> 36.68%<br><b>Votos válidos:</b> 199
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e2c97d2b057ff63203f3aa308c63cf4 = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3e2c97d2b057ff63203f3aa308c63cf4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 196<br><b>% Bolsonaro:</b> 36.68%<br><b>Votos válidos:</b> 199
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03348b69370e433bf3e67ed52b14d3fc = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_03348b69370e433bf3e67ed52b14d3fc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>% Bolsonaro:</b> 44.72%<br><b>Votos válidos:</b> 161
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f04a59698916564e29b59fcd5bfdd1f8 = L.circleMarker(
+                [-20.4997813, -43.620052],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f04a59698916564e29b59fcd5bfdd1f8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL NOSSA SENHORA DO CARMO<br><b>Zona:</b> 88 | <b>Seção:</b> 197<br><b>% Bolsonaro:</b> 44.72%<br><b>Votos válidos:</b> 161
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fceb6d1524fb7a82ca38ad3189c1c94f = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_fceb6d1524fb7a82ca38ad3189c1c94f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>% Bolsonaro:</b> 45.13%<br><b>Votos válidos:</b> 195
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7bb3f10e29c54b3182a2109d59f1b1fc = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7bb3f10e29c54b3182a2109d59f1b1fc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 198<br><b>% Bolsonaro:</b> 45.13%<br><b>Votos válidos:</b> 195
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71ed27318a0435a6df6f0e25442b7216 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_71ed27318a0435a6df6f0e25442b7216.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>% Bolsonaro:</b> 52.38%<br><b>Votos válidos:</b> 168
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_177e63fdfe18f8c91b1fdfabae94a8fe = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_177e63fdfe18f8c91b1fdfabae94a8fe.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 199<br><b>% Bolsonaro:</b> 52.38%<br><b>Votos válidos:</b> 168
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7d175f3bb549f71193447c9477c64ed6 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7d175f3bb549f71193447c9477c64ed6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>% Bolsonaro:</b> 42.11%<br><b>Votos válidos:</b> 171
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c18b45e781292e6521b20e77e88e8406 = L.circleMarker(
+                [-20.5075742, -43.674992],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c18b45e781292e6521b20e77e88e8406.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL OSWALDO CRUZ<br><b>Zona:</b> 88 | <b>Seção:</b> 200<br><b>% Bolsonaro:</b> 42.11%<br><b>Votos válidos:</b> 171
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52e2cde2076b4d30d1fab54cd07c665f = L.circleMarker(
+                [-20.4912047, -43.601871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_52e2cde2076b4d30d1fab54cd07c665f.bindTooltip(
+                `<div>
+                     <b>Local:</b> BIBLIOTECA COMUNITÁRIA PROFESSOR REINALDO ALVES DE BRITO<br><b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>% Bolsonaro:</b> 32.47%<br><b>Votos válidos:</b> 194
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_54723349fb43a941f65edcf0e0a88b46 = L.circleMarker(
+                [-20.4912047, -43.601871],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_54723349fb43a941f65edcf0e0a88b46.bindTooltip(
+                `<div>
+                     <b>Local:</b> BIBLIOTECA COMUNITÁRIA PROFESSOR REINALDO ALVES DE BRITO<br><b>Zona:</b> 88 | <b>Seção:</b> 201<br><b>% Bolsonaro:</b> 32.47%<br><b>Votos válidos:</b> 194
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4b57eb01825497743fd9e41976b7afa8 = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4b57eb01825497743fd9e41976b7afa8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>% Bolsonaro:</b> 31.17%<br><b>Votos válidos:</b> 231
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3489d50d15e58e73d760b94faff67b15 = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3489d50d15e58e73d760b94faff67b15.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 202<br><b>% Bolsonaro:</b> 31.17%<br><b>Votos válidos:</b> 231
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3011feab69c816086fc7566cc7b43feb = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3011feab69c816086fc7566cc7b43feb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>% Bolsonaro:</b> 25.21%<br><b>Votos válidos:</b> 234
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b007a390bc7e4e5b23cd44b21a45639f = L.circleMarker(
+                [-20.5533401, -43.646085],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_b007a390bc7e4e5b23cd44b21a45639f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL RAIMUNDO CAMPOS<br><b>Zona:</b> 88 | <b>Seção:</b> 203<br><b>% Bolsonaro:</b> 25.21%<br><b>Votos válidos:</b> 234
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4c122cc239ba8f3b0f4ca16122c29281 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4c122cc239ba8f3b0f4ca16122c29281.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>% Bolsonaro:</b> 51.68%<br><b>Votos válidos:</b> 238
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85355715542028aa60f8235a4d0ddfda = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_85355715542028aa60f8235a4d0ddfda.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 204<br><b>% Bolsonaro:</b> 51.68%<br><b>Votos válidos:</b> 238
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c6749fc522d82fe0f24d0629bdd174c = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9c6749fc522d82fe0f24d0629bdd174c.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>% Bolsonaro:</b> 42.75%<br><b>Votos válidos:</b> 255
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f50d3bc0ecc060bf8edb1f8d579d6ac3 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f50d3bc0ecc060bf8edb1f8d579d6ac3.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 205<br><b>% Bolsonaro:</b> 42.75%<br><b>Votos válidos:</b> 255
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba8a0517fd7fd18b273d2fd08ae75e35 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_ba8a0517fd7fd18b273d2fd08ae75e35.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>% Bolsonaro:</b> 47.53%<br><b>Votos válidos:</b> 223
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5cc1b1ae6973eb1e5a40172d9380026b = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_5cc1b1ae6973eb1e5a40172d9380026b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 206<br><b>% Bolsonaro:</b> 47.53%<br><b>Votos válidos:</b> 223
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f4e72772732e72207b9f6adb58aefbe = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7f4e72772732e72207b9f6adb58aefbe.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>% Bolsonaro:</b> 46.05%<br><b>Votos válidos:</b> 228
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d61df2387443774fef8d06becd59faa4 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d61df2387443774fef8d06becd59faa4.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 207<br><b>% Bolsonaro:</b> 46.05%<br><b>Votos válidos:</b> 228
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2f4fb0e0ed52ecd6eb9d55be444ec49 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f2f4fb0e0ed52ecd6eb9d55be444ec49.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>% Bolsonaro:</b> 49.41%<br><b>Votos válidos:</b> 253
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70a7452955b8a7f31f3d3b1502266211 = L.circleMarker(
+                [-20.514793, -43.706738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_70a7452955b8a7f31f3d3b1502266211.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL LIVREMENTE<br><b>Zona:</b> 88 | <b>Seção:</b> 208<br><b>% Bolsonaro:</b> 49.41%<br><b>Votos válidos:</b> 253
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_981eb68138ef877351c5b9a68321587c = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_981eb68138ef877351c5b9a68321587c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>% Bolsonaro:</b> 46.12%<br><b>Votos válidos:</b> 206
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60eecbafe813042429d0538f5e77cab3 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_60eecbafe813042429d0538f5e77cab3.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 209<br><b>% Bolsonaro:</b> 46.12%<br><b>Votos válidos:</b> 206
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03ce1fbd1361962d886ec79b6662e2c6 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_03ce1fbd1361962d886ec79b6662e2c6.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>% Bolsonaro:</b> 48.83%<br><b>Votos válidos:</b> 213
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f321cb4df2b377738b51df97cb533a9 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4f321cb4df2b377738b51df97cb533a9.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 210<br><b>% Bolsonaro:</b> 48.83%<br><b>Votos válidos:</b> 213
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fda3162aaf139f6f322f63e23c640087 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_fda3162aaf139f6f322f63e23c640087.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>% Bolsonaro:</b> 40.10%<br><b>Votos válidos:</b> 197
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b9fb2e165bec68fc8a4dbc24d38b057 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8b9fb2e165bec68fc8a4dbc24d38b057.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 211<br><b>% Bolsonaro:</b> 40.10%<br><b>Votos válidos:</b> 197
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_432bbbd389c1264dd20ca80ae5be523f = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_432bbbd389c1264dd20ca80ae5be523f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>% Bolsonaro:</b> 42.57%<br><b>Votos válidos:</b> 202
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6f9b3617728e813610bf25614c24ecb0 = L.circleMarker(
+                [-20.5312749, -43.7214423],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6f9b3617728e813610bf25614c24ecb0.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE FRANCISCO NOGUEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 212<br><b>% Bolsonaro:</b> 42.57%<br><b>Votos válidos:</b> 202
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81b603d7eee97b98b2e9998a7081f442 = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_81b603d7eee97b98b2e9998a7081f442.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>% Bolsonaro:</b> 47.26%<br><b>Votos válidos:</b> 292
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_543d1198351ad94ffb2c760346b480cb = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_543d1198351ad94ffb2c760346b480cb.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 213<br><b>% Bolsonaro:</b> 47.26%<br><b>Votos válidos:</b> 292
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f61275a51a43007fbf1ca8395061727a = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f61275a51a43007fbf1ca8395061727a.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>% Bolsonaro:</b> 43.90%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8404fa73e88aa23f0cda66319e35a6e4 = L.circleMarker(
+                [-20.5226438, -43.693078],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8404fa73e88aa23f0cda66319e35a6e4.bindTooltip(
+                `<div>
+                     <b>Local:</b> CESEC - CENTRO ESTADUAL DE EDUCAÇÃO CONTINUADA JOSÉ BRÁS DOS REIS<br><b>Zona:</b> 88 | <b>Seção:</b> 214<br><b>% Bolsonaro:</b> 43.90%<br><b>Votos válidos:</b> 287
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b2a5f253c38c88e9561fce643f3e0b7 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7b2a5f253c38c88e9561fce643f3e0b7.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>% Bolsonaro:</b> 40.91%<br><b>Votos válidos:</b> 286
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e60137cb28019fe564ae58f73524091 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8e60137cb28019fe564ae58f73524091.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 215<br><b>% Bolsonaro:</b> 40.91%<br><b>Votos válidos:</b> 286
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_52b47901d2932add4c93ca2aa74ec1e2 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_52b47901d2932add4c93ca2aa74ec1e2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>% Bolsonaro:</b> 45.24%<br><b>Votos válidos:</b> 294
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_707e121096bb2bf4d389a730716b5d97 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_707e121096bb2bf4d389a730716b5d97.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 216<br><b>% Bolsonaro:</b> 45.24%<br><b>Votos válidos:</b> 294
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5616dee3ced174c75cbe0cd7de110598 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_5616dee3ced174c75cbe0cd7de110598.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>% Bolsonaro:</b> 45.71%<br><b>Votos válidos:</b> 280
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4bd1bf51652c6432d591c94bef78241e = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4bd1bf51652c6432d591c94bef78241e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 217<br><b>% Bolsonaro:</b> 45.71%<br><b>Votos válidos:</b> 280
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6936611dbea306baaf2b38699332012c = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6936611dbea306baaf2b38699332012c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>% Bolsonaro:</b> 53.53%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef6984bb992421badb606081552c3b59 = L.circleMarker(
+                [-20.5367426, -43.7044865],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_ef6984bb992421badb606081552c3b59.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL FERNANDO FELIX DE SOUZA<br><b>Zona:</b> 88 | <b>Seção:</b> 218<br><b>% Bolsonaro:</b> 53.53%<br><b>Votos válidos:</b> 269
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8320fef2bccc27706224701007c24c8 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e8320fef2bccc27706224701007c24c8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>% Bolsonaro:</b> 42.71%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a97292845b65e9abf6169718c71166ba = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a97292845b65e9abf6169718c71166ba.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 219<br><b>% Bolsonaro:</b> 42.71%<br><b>Votos válidos:</b> 295
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_491f71fe0db6e39cd100a475364afee1 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_491f71fe0db6e39cd100a475364afee1.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>% Bolsonaro:</b> 42.21%<br><b>Votos válidos:</b> 263
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a86541bd75f78a3906e1a1a6c1744e72 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_a86541bd75f78a3906e1a1a6c1744e72.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 220<br><b>% Bolsonaro:</b> 42.21%<br><b>Votos válidos:</b> 263
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9090d7a88f944e909f34bae2377fd0a = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e9090d7a88f944e909f34bae2377fd0a.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>% Bolsonaro:</b> 40.93%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c9259fa321692260bd015db87cf74a2f = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c9259fa321692260bd015db87cf74a2f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 221<br><b>% Bolsonaro:</b> 40.93%<br><b>Votos válidos:</b> 281
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9073735a95013d933f00435e1be41fba = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_9073735a95013d933f00435e1be41fba.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>% Bolsonaro:</b> 37.93%<br><b>Votos válidos:</b> 261
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b0e7abce844cedca78fbba2e4100072 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_8b0e7abce844cedca78fbba2e4100072.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 222<br><b>% Bolsonaro:</b> 37.93%<br><b>Votos válidos:</b> 261
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef0d930f902312b01df2aaa388d083c5 = L.circleMarker(
+                [-20.5073333, -43.6567219],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_ef0d930f902312b01df2aaa388d083c5.bindTooltip(
+                `<div>
+                     <b>Local:</b> POSTO DE SAÚDE DE CARREIRAS<br><b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>% Bolsonaro:</b> 40.38%<br><b>Votos válidos:</b> 317
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4444fdd687a2b2837985d322c1ea93b2 = L.circleMarker(
+                [-20.5073333, -43.6567219],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_4444fdd687a2b2837985d322c1ea93b2.bindTooltip(
+                `<div>
+                     <b>Local:</b> POSTO DE SAÚDE DE CARREIRAS<br><b>Zona:</b> 88 | <b>Seção:</b> 223<br><b>% Bolsonaro:</b> 40.38%<br><b>Votos válidos:</b> 317
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b0e46cce01cbfdf9659ddebc29a24c8 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_3b0e46cce01cbfdf9659ddebc29a24c8.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>% Bolsonaro:</b> 36.23%<br><b>Votos válidos:</b> 265
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63cd5feb1b0d3c94bbd7999f58bc5f4e = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_63cd5feb1b0d3c94bbd7999f58bc5f4e.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 226<br><b>% Bolsonaro:</b> 36.23%<br><b>Votos válidos:</b> 265
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d064dcecbc1776ec3e5bd9039554615 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6d064dcecbc1776ec3e5bd9039554615.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>% Bolsonaro:</b> 39.65%<br><b>Votos válidos:</b> 285
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_926e8ca21e0d84ae86022b0c87078dd0 = L.circleMarker(
+                [-20.5542072, -43.671679],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_926e8ca21e0d84ae86022b0c87078dd0.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL JOSE DE ANCHIETA<br><b>Zona:</b> 88 | <b>Seção:</b> 227<br><b>% Bolsonaro:</b> 39.65%<br><b>Votos válidos:</b> 285
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_713070687c4f456de9c354d0f9781c4d = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_713070687c4f456de9c354d0f9781c4d.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>% Bolsonaro:</b> 43.53%<br><b>Votos válidos:</b> 317
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_945476b4256692d3c381b373783b9acb = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_945476b4256692d3c381b373783b9acb.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 228<br><b>% Bolsonaro:</b> 43.53%<br><b>Votos válidos:</b> 317
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa300b9f0cfcb497d442dec6b3d2a76b = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_aa300b9f0cfcb497d442dec6b3d2a76b.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>% Bolsonaro:</b> 45.51%<br><b>Votos válidos:</b> 301
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_30880969e4fb9445c1d9bf961b201112 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_30880969e4fb9445c1d9bf961b201112.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 229<br><b>% Bolsonaro:</b> 45.51%<br><b>Votos válidos:</b> 301
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d35abf317e378e22e6d0aa5e37c24d3c = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_d35abf317e378e22e6d0aa5e37c24d3c.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>% Bolsonaro:</b> 47.76%<br><b>Votos válidos:</b> 312
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51145223fede49294cf63dd061f123ee = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_51145223fede49294cf63dd061f123ee.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 230<br><b>% Bolsonaro:</b> 47.76%<br><b>Votos válidos:</b> 312
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2e050b6d8dd60014ecc3be3a79ab4d2 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_e2e050b6d8dd60014ecc3be3a79ab4d2.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>% Bolsonaro:</b> 51.59%<br><b>Votos válidos:</b> 314
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5e1d607471e7a695ee91a85228e5abc = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_f5e1d607471e7a695ee91a85228e5abc.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 231<br><b>% Bolsonaro:</b> 51.59%<br><b>Votos válidos:</b> 314
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c264e083fe1d8e77569b402ef8ec83f0 = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c264e083fe1d8e77569b402ef8ec83f0.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>% Bolsonaro:</b> 43.44%<br><b>Votos válidos:</b> 320
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_922c26d26c46acc2f355e6ba6dc5ba1f = L.circleMarker(
+                [-20.5318786, -43.6879654],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_922c26d26c46acc2f355e6ba6dc5ba1f.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL GERALDO MARINO VIEIRA<br><b>Zona:</b> 88 | <b>Seção:</b> 232<br><b>% Bolsonaro:</b> 43.44%<br><b>Votos válidos:</b> 320
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bcbf521d197624ff64dc8aada94d0380 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_bcbf521d197624ff64dc8aada94d0380.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>% Bolsonaro:</b> 54.19%<br><b>Votos válidos:</b> 310
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7bb0de3517cc29c4437f4d81a0f4b839 = L.circleMarker(
+                [-20.511365, -43.712669],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#4292c6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_7bb0de3517cc29c4437f4d81a0f4b839.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO BATISTA MINEIRO<br><b>Zona:</b> 88 | <b>Seção:</b> 233<br><b>% Bolsonaro:</b> 54.19%<br><b>Votos válidos:</b> 310
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c404fd64275964465b5c64d82fb6dce5 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_c404fd64275964465b5c64d82fb6dce5.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>% Bolsonaro:</b> 45.53%<br><b>Votos válidos:</b> 246
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_55160535f858678f09f94f404a6f7ee0 = L.circleMarker(
+                [-29.972402, -50.134103],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#6baed6", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_55160535f858678f09f94f404a6f7ee0.bindTooltip(
+                `<div>
+                     <b>Local:</b> COLEGIO ARQUIDIOCESANO DE OURO BRANCO<br><b>Zona:</b> 88 | <b>Seção:</b> 234<br><b>% Bolsonaro:</b> 45.53%<br><b>Votos válidos:</b> 246
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_303716bfe7595576ac54098180130d30 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_303716bfe7595576ac54098180130d30.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>% Bolsonaro:</b> 38.24%<br><b>Votos válidos:</b> 102
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c3613fe84d19143fbc7b1ef84c3e5c5 = L.circleMarker(
+                [-20.5159206, -43.68688],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c6dbef", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12, "stroke": true, "weight": 1}
+            ).addTo(map_f79ab04ffd2247ffb9d9b6863c24a5b0);
+        
+    
+            circle_marker_6c3613fe84d19143fbc7b1ef84c3e5c5.bindTooltip(
+                `<div>
+                     <b>Local:</b> ESCOLA MUNICIPAL MARIA ZITA DOS SANTOS LOPES<br><b>Zona:</b> 88 | <b>Seção:</b> 236<br><b>% Bolsonaro:</b> 38.24%<br><b>Votos válidos:</b> 102
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
